@@ -1,20 +1,31 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
+from torch import device
 from torch.utils.data import DataLoader, Dataset
 import numpy as np
 import xml.etree.ElementTree as ET
 
-strike_types = ['Jab', 'Cross', 'Hook', 'Upper', 'Leg Kick', 'Body Kick', 'High Kick','No Strike']  # Added 'No Strike' as a legitimate class
+strike_types = ['No Strike', 'Jab', 'Cross', 'Hook', 'Upper', 'Leg Kick', 'Body Kick', 'High Kick']
 
 class HybridBoxingLSTM(nn.Module):
     def __init__(self, keypoints_input_size, cnn_features_size, hidden_size, num_layers, num_classes):
         super().__init__()
+        self.num_layers = num_layers  # Ensure this attribute is properly defined
         self.hidden_size = hidden_size
-        self.num_layers = num_layers
         self.lstm = nn.LSTM(input_size=keypoints_input_size + cnn_features_size,
                             hidden_size=hidden_size, num_layers=num_layers, batch_first=True)
         self.fc = nn.Linear(hidden_size, num_classes)
+        self.init_weights()
+
+    def init_weights(self):
+        for name, param in self.named_parameters():
+            if 'weight_ih' in name:
+                torch.nn.init.xavier_uniform_(param.data)
+            elif 'weight_hh' in name:
+                torch.nn.init.orthogonal_(param.data)
+            elif 'bias' in name:
+                param.data.fill_(0)
 
     def forward(self, keypoints, cnn_features):
         combined_input = torch.cat((keypoints, cnn_features), dim=2)
@@ -27,40 +38,28 @@ def parse_annotations(xml_file):
     tree = ET.parse(xml_file)
     root = tree.getroot()
     annotations = {}
-    non_strikes = ['F1', 'F2', 'Ref']  # Define non-strike labels
-
     for track in root.findall('.//track'):
         label = track.get('label')
-        if label in strike_types:  # Only consider configured strike types
+        if label in strike_types:
             for box in track.findall('.//box'):
                 frame = int(box.get('frame'))
                 annotations[frame] = label
-        elif label in non_strikes:  # Handle non-strike labels if needed
-            continue  # Skip non-strike labels or assign them a 'No Strike' class
-
     return annotations
 
-
-annotations = parse_annotations('annotations.xml')
-
-# Mock-up data for demonstration
-num_samples = 250
+annotations = parse_annotations('slugfestannotations.xml')
+num_samples = 13000
+num_classes = len(strike_types)
 seq_len = 17
 keypoints_dim = 34
 cnn_features_dim = 1280
 keypoints = torch.randn(num_samples, seq_len, keypoints_dim)
 cnn_features = torch.randn(num_samples, seq_len, cnn_features_dim)
-
-num_classes = len(strike_types) + 1  # Add an extra class for 'No Strike'
-labels = torch.full((num_samples,), num_classes-1, dtype=torch.long)  # Default to 'No Strike'
+labels = torch.full((num_samples,), len(strike_types), dtype=torch.long)  # Default to 'No Strike'
 label_map = {strike: i for i, strike in enumerate(strike_types)}
 
-# Create labels array with default 'No Strike' class index
-
-for frame in range(min(num_samples, max(annotations.keys()))):  # Ensure we only go up to the highest frame annotated
-    strike = annotations.get(frame)
-    labels[frame] = label_map.get(strike, num_classes-1)  # Default to 'No Strike' if not found
-
+for frame in annotations.keys():
+    if frame < num_samples:
+        labels[frame] = label_map[annotations[frame]]
 
 print(labels)
 print(cnn_features)
@@ -81,32 +80,64 @@ dataset = StrikeDataset(keypoints, cnn_features, labels)
 train_dataloader = DataLoader(dataset, batch_size=10, shuffle=True)  # Use shuffling during training
 eval_dataloader = DataLoader(dataset, batch_size=10, shuffle=False)  # No shuffling during evaluation to maintain order
 
-model = HybridBoxingLSTM(keypoints_dim, cnn_features_dim, 128, 2, num_classes)
-optimizer = optim.Adam(model.parameters(), lr=0.001)
-loss_function = nn.CrossEntropyLoss(ignore_index=num_classes-1)  # Ignoring the 'No Strike' class
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+model = HybridBoxingLSTM(keypoints_dim, cnn_features_dim, 128, 2, len(strike_types) + 1).to(device)
+optimizer = optim.Adam(model.parameters(), lr=0.0001)  # Lowered from 0.001 to 0.0001
+class_weights = torch.tensor([10.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]).to(device)
+loss_function = nn.CrossEntropyLoss(weight=class_weights, ignore_index=num_classes-1)
 
-# Training loop
-for epoch in range(20):  # Example: train for 3 epochs
-    for kp, cnn, lbl in train_dataloader:
+
+assert not torch.isnan(keypoints).any() and not torch.isnan(cnn_features).any(), "Inputs contain NaNs"
+assert not torch.isnan(labels).any(), "Labels contain NaNs"
+torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+for epoch in range(25):
+    total_loss = 0
+    for kp, cnn, lbl in DataLoader(StrikeDataset(keypoints, cnn_features, labels), batch_size=10, shuffle=True):
+        kp, cnn, lbl = kp.to(device), cnn.to(device), lbl.to(device)
         optimizer.zero_grad()
         outputs = model(kp, cnn)
-        valid_indices = lbl != num_classes-1  # Find indices where label is not 'No Strike'
-        if valid_indices.any():  # Only compute loss where there are valid indices
-            loss = loss_function(outputs[valid_indices], lbl[valid_indices])
-            loss.backward()
-            optimizer.step()
-    print(f'Epoch {epoch + 1}: Loss {loss.item()}')
+        loss = loss_function(outputs, lbl)
+        if torch.isnan(loss):
+            print("NaN detected in loss, skipping backprop")
+            continue
+        loss.backward()
+        optimizer.step()
+        total_loss += loss.item()
+    print(f'Epoch {epoch + 1}, Loss: {total_loss}')
 
 # Evaluation loop
+strike_count = {key: 0 for key in strike_types}
+
+# Evaluation loop
+model.eval()
 with torch.no_grad():
-    frame_offset = 0  # Initialize frame offset for tracking frames across batches
+    correct_matches = 0
+    total = 0
+    frame_offset = 0
     for kp, cnn, lbl in eval_dataloader:
-        predictions = model(kp, cnn)
-        predicted_labels = torch.argmax(predictions, dim=1)
+        kp, cnn, lbl = kp.to(device), cnn.to(device), lbl.to(device)
+        outputs = model(kp, cnn)
+        predicted_labels = torch.argmax(outputs, dim=1)
+        correct_matches += (predicted_labels == lbl).sum().item()
+        total += lbl.size(0)
+
+        # Tally the strikes
+        for pred in predicted_labels:
+            predicted_strike = strike_types[pred] if pred < len(strike_types) else 'No Strike'
+            strike_count[predicted_strike] += 1
+
         for i, (pred, actual) in enumerate(zip(predicted_labels, lbl)):
-            frame_number = frame_offset + i  # Compute global frame number
+            frame_number = frame_offset + i
             predicted_strike = strike_types[pred] if pred < len(strike_types) else 'No Strike'
             actual_strike = strike_types[actual] if actual < len(strike_types) else 'No Strike'
             print(f"Evaluation - Frame {frame_number}: Predicted Strike: {predicted_strike}, Actual Strike: {actual_strike}")
-        frame_offset += len(lbl)  # Update the frame offset by the batch size
 
+        frame_offset += len(lbl)
+
+    accuracy = correct_matches / total
+    print(f'Evaluation Accuracy: {accuracy * 100:.2f}%')
+
+# Print the tally of predicted strikes
+print("Tally of predicted strikes:")
+for strike, count in strike_count.items():
+    print(f"{strike}: {count}")
