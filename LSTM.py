@@ -8,6 +8,28 @@ import xml.etree.ElementTree as ET
 
 strike_types = ['No Strike', 'Jab', 'Cross', 'Hook', 'Upper', 'Leg Kick', 'Body Kick', 'High Kick']
 
+strike_type_to_strike_id = {
+    'No Strike': 1,
+    'Jab': 2,
+    'Cross': 3,
+    'Hook': 4,
+    'Upper': 5,
+    'Leg Kick': 6,
+    'Body Kick': 7,
+    'High Kick': 8,
+}
+
+strike_id_to_strike_type = {
+    1:'No Strike',
+    2:'Jab',
+    3:'Cross',
+    4:'Hook',
+    5:'Upper',
+    6:'Leg Kick',
+    7:'Body Kick',
+    8:'High Kick',
+}
+
 class HybridBoxingLSTM(nn.Module):
     def __init__(self, keypoints_input_size, cnn_features_size, hidden_size, num_layers, num_classes):
         super().__init__()
@@ -46,7 +68,7 @@ def parse_annotations(xml_file):
                 annotations[frame] = label
     return annotations
 
-annotations = parse_annotations('slugfestannotations.xml')
+annotations = parse_annotations('annotations.xml')
 num_samples = 13000
 num_classes = len(strike_types)
 seq_len = 17
@@ -55,14 +77,19 @@ cnn_features_dim = 1280
 keypoints = torch.randn(num_samples, seq_len, keypoints_dim)
 cnn_features = torch.randn(num_samples, seq_len, cnn_features_dim)
 labels = torch.full((num_samples,), len(strike_types), dtype=torch.long)  # Default to 'No Strike'
-label_map = {strike: i for i, strike in enumerate(strike_types)}
+#label_map = {strike: i for i, strike in enumerate(strike_types)}
 
-for frame in annotations.keys():
-    if frame < num_samples:
-        labels[frame] = label_map[annotations[frame]]
+#print(annotations)
+
+for frame in range(num_samples):
+    if frame in annotations.keys():
+        labels[frame] = strike_type_to_strike_id[annotations[frame]]
+    else:
+        labels[frame] = 1
 
 print(labels)
-print(cnn_features)
+
+
 class StrikeDataset(Dataset):
     def __init__(self, keypoints, cnn_features, labels):
         self.keypoints = keypoints
@@ -83,8 +110,8 @@ eval_dataloader = DataLoader(dataset, batch_size=10, shuffle=False)  # No shuffl
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = HybridBoxingLSTM(keypoints_dim, cnn_features_dim, 128, 2, len(strike_types) + 1).to(device)
 optimizer = optim.Adam(model.parameters(), lr=0.0001)  # Lowered from 0.001 to 0.0001
-class_weights = torch.tensor([10.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]).to(device)
-loss_function = nn.CrossEntropyLoss(weight=class_weights, ignore_index=num_classes-1)
+#class_weights = torch.tensor([10.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]).to(device)
+loss_function = nn.CrossEntropyLoss()
 
 
 assert not torch.isnan(keypoints).any() and not torch.isnan(cnn_features).any(), "Inputs contain NaNs"
@@ -122,14 +149,18 @@ with torch.no_grad():
         total += lbl.size(0)
 
         # Tally the strikes
-        for pred in predicted_labels:
-            predicted_strike = strike_types[pred] if pred < len(strike_types) else 'No Strike'
-            strike_count[predicted_strike] += 1
+        #for pred in predicted_labels:
+            #predicted_strike = strike_types[pred] if pred < len(strike_types) else 'No Strike'
+            #predicted_strike
+            #strike_count[predicted_strike] += 1
 
         for i, (pred, actual) in enumerate(zip(predicted_labels, lbl)):
             frame_number = frame_offset + i
-            predicted_strike = strike_types[pred] if pred < len(strike_types) else 'No Strike'
-            actual_strike = strike_types[actual] if actual < len(strike_types) else 'No Strike'
+            #predicted_strike = strike_types[pred] if pred < len(strike_types) else 'No Strike'
+            #actual_strike = strike_types[actual] if actual < len(strike_types) else 'No Strike'
+            predicted_strike = strike_id_to_strike_type[pred.item()]
+            actual_strike = strike_id_to_strike_type[actual.item()]
+            strike_count[predicted_strike] += 1
             print(f"Evaluation - Frame {frame_number}: Predicted Strike: {predicted_strike}, Actual Strike: {actual_strike}")
 
         frame_offset += len(lbl)
