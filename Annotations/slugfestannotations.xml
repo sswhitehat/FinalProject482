@@ -1,0 +1,1356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<annotations>
+  <version>1.1</version>
+  <meta>
+    <job>
+      <id>717503</id>
+      <size>13654</size>
+      <mode>annotation</mode>
+      <overlap>0</overlap>
+      <bugtracker></bugtracker>
+      <created>2024-04-20 16:59:17.087427+00:00</created>
+      <updated>2024-04-20 19:00:25.270920+00:00</updated>
+      <subset>Train</subset>
+      <start_frame>0</start_frame>
+      <stop_frame>13653</stop_frame>
+      <frame_filter></frame_filter>
+      <segments>
+        <segment>
+          <id>719044</id>
+          <start>0</start>
+          <stop>13653</stop>
+          <url>https://app.cvat.ai/api/jobs/717503</url>
+        </segment>
+      </segments>
+      <owner>
+        <username>jmostert</username>
+        <email>jmostert@gmu.edu</email>
+      </owner>
+      <assignee>
+        <username>jmostert</username>
+        <email>jmostert@gmu.edu</email>
+      </assignee>
+      <labels>
+        <label>
+          <name>Jab</name>
+          <color>#ff6037</color>
+          <type>rectangle</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>Cross</name>
+          <color>#3df53d</color>
+          <type>rectangle</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>F1</name>
+          <color>#61a12e</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>F2</name>
+          <color>#a519c9</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>Ref</name>
+          <color>#a535a2</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>Hook</name>
+          <color>#31c414</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>Upper</name>
+          <color>#a92616</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>Leg Kick</name>
+          <color>#5cd611</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>Body Kick</name>
+          <color>#ff6a4d</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>High Kick</name>
+          <color>#ea3e5b</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+      </labels>
+    </job>
+    <dumped>2024-04-20 19:00:44.994219+00:00</dumped>
+  </meta>
+  <track id="0" label="F1" source="manual">
+    <box frame="0" keyframe="1" outside="0" occluded="0" xtl="111.10" ytl="33.25" xbr="262.19" ybr="312.11" z_order="0">
+    </box>
+    <box frame="1" keyframe="1" outside="1" occluded="0" xtl="111.10" ytl="33.25" xbr="262.19" ybr="312.11" z_order="0">
+    </box>
+  </track>
+  <track id="1" label="F2" source="manual">
+    <box frame="0" keyframe="1" outside="0" occluded="0" xtl="346.75" ytl="32.01" xbr="443.74" ybr="290.04" z_order="0">
+    </box>
+    <box frame="1" keyframe="1" outside="1" occluded="0" xtl="346.75" ytl="32.01" xbr="443.74" ybr="290.04" z_order="0">
+    </box>
+  </track>
+  <track id="2" label="Jab" source="manual">
+    <box frame="16" keyframe="1" outside="0" occluded="0" xtl="181.05" ytl="25.48" xbr="412.96" ybr="92.01" z_order="0">
+    </box>
+    <box frame="17" keyframe="1" outside="1" occluded="0" xtl="181.05" ytl="25.48" xbr="412.96" ybr="92.01" z_order="0">
+    </box>
+  </track>
+  <track id="3" label="Jab" source="manual">
+    <box frame="25" keyframe="1" outside="0" occluded="0" xtl="181.98" ytl="24.55" xbr="430.37" ybr="106.00" z_order="0">
+    </box>
+    <box frame="26" keyframe="1" outside="1" occluded="0" xtl="181.98" ytl="24.55" xbr="430.37" ybr="106.00" z_order="0">
+    </box>
+  </track>
+  <track id="4" label="Jab" source="manual">
+    <box frame="30" keyframe="1" outside="0" occluded="0" xtl="213.38" ytl="23.93" xbr="473.90" ybr="90.77" z_order="0">
+    </box>
+    <box frame="31" keyframe="1" outside="1" occluded="0" xtl="213.38" ytl="23.93" xbr="473.90" ybr="90.77" z_order="0">
+    </box>
+  </track>
+  <track id="5" label="Leg Kick" source="manual">
+    <box frame="34" keyframe="1" outside="0" occluded="0" xtl="190.99" ytl="124.96" xbr="471.41" ybr="223.20" z_order="0">
+    </box>
+    <box frame="35" keyframe="1" outside="1" occluded="0" xtl="190.99" ytl="124.96" xbr="471.41" ybr="223.20" z_order="0">
+    </box>
+  </track>
+  <track id="6" label="Leg Kick" source="manual">
+    <box frame="77" keyframe="1" outside="0" occluded="0" xtl="209.03" ytl="141.13" xbr="475.76" ybr="232.84" z_order="0">
+    </box>
+    <box frame="78" keyframe="1" outside="1" occluded="0" xtl="209.03" ytl="141.13" xbr="475.76" ybr="232.84" z_order="0">
+    </box>
+  </track>
+  <track id="7" label="Hook" source="manual">
+    <box frame="87" keyframe="1" outside="0" occluded="0" xtl="258.14" ytl="38.23" xbr="463.02" ybr="115.64" z_order="0">
+    </box>
+    <box frame="88" keyframe="1" outside="1" occluded="0" xtl="258.14" ytl="38.23" xbr="463.02" ybr="115.64" z_order="0">
+    </box>
+  </track>
+  <track id="8" label="Upper" source="manual">
+    <box frame="97" keyframe="1" outside="0" occluded="0" xtl="260.63" ytl="49.11" xbr="514.31" ybr="133.98" z_order="0">
+    </box>
+    <box frame="98" keyframe="1" outside="1" occluded="0" xtl="260.63" ytl="49.11" xbr="514.31" ybr="133.98" z_order="0">
+    </box>
+  </track>
+  <track id="9" label="Leg Kick" source="manual">
+    <box frame="174" keyframe="1" outside="0" occluded="0" xtl="144.05" ytl="135.84" xbr="428.82" ybr="222.89" z_order="0">
+    </box>
+    <box frame="175" keyframe="1" outside="1" occluded="0" xtl="144.05" ytl="135.84" xbr="428.82" ybr="222.89" z_order="0">
+    </box>
+  </track>
+  <track id="10" label="Jab" source="manual">
+    <box frame="205" keyframe="1" outside="0" occluded="0" xtl="202.19" ytl="29.83" xbr="432.55" ybr="92.63" z_order="0">
+    </box>
+    <box frame="206" keyframe="1" outside="1" occluded="0" xtl="202.19" ytl="29.83" xbr="432.55" ybr="92.63" z_order="0">
+    </box>
+  </track>
+  <track id="11" label="Leg Kick" source="manual">
+    <box frame="266" keyframe="1" outside="0" occluded="0" xtl="186.64" ytl="137.71" xbr="403.64" ybr="195.53" z_order="0">
+    </box>
+    <box frame="267" keyframe="1" outside="1" occluded="0" xtl="186.64" ytl="137.71" xbr="403.64" ybr="195.53" z_order="0">
+    </box>
+  </track>
+  <track id="12" label="Jab" source="manual">
+    <box frame="404" keyframe="1" outside="0" occluded="0" xtl="168.30" ytl="35.43" xbr="427.57" ybr="103.20" z_order="0">
+    </box>
+    <box frame="405" keyframe="1" outside="1" occluded="0" xtl="168.30" ytl="35.43" xbr="427.57" ybr="103.20" z_order="0">
+    </box>
+  </track>
+  <track id="13" label="Body Kick" source="manual">
+    <box frame="464" keyframe="1" outside="0" occluded="0" xtl="253.48" ytl="112.84" xbr="397.42" ybr="174.39" z_order="0">
+    </box>
+    <box frame="465" keyframe="1" outside="1" occluded="0" xtl="253.48" ytl="112.84" xbr="397.42" ybr="174.39" z_order="0">
+    </box>
+  </track>
+  <track id="14" label="Jab" source="manual">
+    <box frame="519" keyframe="1" outside="0" occluded="0" xtl="275.55" ytl="53.46" xbr="458.04" ybr="124.96" z_order="0">
+    </box>
+    <box frame="520" keyframe="1" outside="1" occluded="0" xtl="275.55" ytl="53.46" xbr="458.04" ybr="124.96" z_order="0">
+    </box>
+  </track>
+  <track id="15" label="Hook" source="manual">
+    <box frame="523" keyframe="1" outside="0" occluded="0" xtl="246.02" ytl="64.34" xbr="479.80" ybr="152.32" z_order="0">
+    </box>
+    <box frame="524" keyframe="1" outside="1" occluded="0" xtl="246.02" ytl="64.34" xbr="479.80" ybr="152.32" z_order="0">
+    </box>
+  </track>
+  <track id="16" label="Jab" source="manual">
+    <box frame="617" keyframe="1" outside="0" occluded="0" xtl="263.74" ytl="31.08" xbr="477.32" ybr="98.85" z_order="0">
+    </box>
+    <box frame="618" keyframe="1" outside="1" occluded="0" xtl="263.74" ytl="31.08" xbr="477.32" ybr="98.85" z_order="0">
+    </box>
+  </track>
+  <track id="17" label="Hook" source="manual">
+    <box frame="649" keyframe="1" outside="0" occluded="0" xtl="284.26" ytl="42.89" xbr="449.03" ybr="108.80" z_order="0">
+    </box>
+    <box frame="650" keyframe="1" outside="1" occluded="0" xtl="284.26" ytl="42.89" xbr="449.03" ybr="108.80" z_order="0">
+    </box>
+  </track>
+  <track id="18" label="Hook" source="manual">
+    <box frame="665" keyframe="1" outside="0" occluded="0" xtl="283.02" ytl="43.82" xbr="447.16" ybr="105.07" z_order="0">
+    </box>
+    <box frame="666" keyframe="1" outside="1" occluded="0" xtl="283.02" ytl="43.82" xbr="447.16" ybr="105.07" z_order="0">
+    </box>
+  </track>
+  <track id="19" label="Jab" source="manual">
+    <box frame="791" keyframe="1" outside="0" occluded="0" xtl="217.73" ytl="40.09" xbr="413.59" ybr="134.91" z_order="0">
+    </box>
+    <box frame="792" keyframe="1" outside="1" occluded="0" xtl="217.73" ytl="40.09" xbr="413.59" ybr="134.91" z_order="0">
+    </box>
+  </track>
+  <track id="20" label="Jab" source="manual">
+    <box frame="826" keyframe="1" outside="0" occluded="0" xtl="111.10" ytl="56.57" xbr="414.21" ybr="145.17" z_order="0">
+    </box>
+    <box frame="827" keyframe="1" outside="1" occluded="0" xtl="111.10" ytl="56.57" xbr="414.21" ybr="145.17" z_order="0">
+    </box>
+  </track>
+  <track id="21" label="Body Kick" source="manual">
+    <box frame="921" keyframe="1" outside="0" occluded="0" xtl="124.78" ytl="115.02" xbr="380.01" ybr="209.83" z_order="0">
+    </box>
+    <box frame="922" keyframe="1" outside="1" occluded="0" xtl="124.78" ytl="115.02" xbr="380.01" ybr="209.83" z_order="0">
+    </box>
+  </track>
+  <track id="22" label="Jab" source="manual">
+    <box frame="1220" keyframe="1" outside="0" occluded="0" xtl="231.10" ytl="41.03" xbr="399.28" ybr="95.12" z_order="0">
+    </box>
+    <box frame="1221" keyframe="1" outside="1" occluded="0" xtl="231.10" ytl="41.03" xbr="399.28" ybr="95.12" z_order="0">
+    </box>
+  </track>
+  <track id="23" label="Leg Kick" source="manual">
+    <box frame="1280" keyframe="1" outside="0" occluded="0" xtl="255.66" ytl="199.57" xbr="389.65" ybr="288.80" z_order="0">
+    </box>
+    <box frame="1281" keyframe="1" outside="1" occluded="0" xtl="255.66" ytl="199.57" xbr="389.65" ybr="288.80" z_order="0">
+    </box>
+  </track>
+  <track id="24" label="Hook" source="manual">
+    <box frame="1297" keyframe="1" outside="0" occluded="0" xtl="190.99" ytl="60.61" xbr="341.15" ybr="119.37" z_order="0">
+    </box>
+    <box frame="1298" keyframe="1" outside="1" occluded="0" xtl="190.99" ytl="60.61" xbr="341.15" ybr="119.37" z_order="0">
+    </box>
+  </track>
+  <track id="25" label="Jab" source="manual">
+    <box frame="1438" keyframe="1" outside="0" occluded="0" xtl="239.18" ytl="58.44" xbr="418.87" ybr="134.29" z_order="0">
+    </box>
+    <box frame="1439" keyframe="1" outside="1" occluded="0" xtl="239.18" ytl="58.44" xbr="418.87" ybr="134.29" z_order="0">
+    </box>
+  </track>
+  <track id="26" label="Hook" source="manual">
+    <box frame="1487" keyframe="1" outside="0" occluded="0" xtl="179.18" ytl="107.55" xbr="412.34" ybr="206.10" z_order="0">
+    </box>
+    <box frame="1488" keyframe="1" outside="1" occluded="0" xtl="179.18" ytl="107.55" xbr="412.34" ybr="206.10" z_order="0">
+    </box>
+  </track>
+  <track id="27" label="Jab" source="manual">
+    <box frame="1564" keyframe="1" outside="0" occluded="0" xtl="159.91" ytl="25.48" xbr="480.42" ybr="136.78" z_order="0">
+    </box>
+    <box frame="1565" keyframe="1" outside="1" occluded="0" xtl="159.91" ytl="25.48" xbr="480.42" ybr="136.78" z_order="0">
+    </box>
+  </track>
+  <track id="28" label="Jab" source="manual">
+    <box frame="1578" keyframe="1" outside="0" occluded="0" xtl="190.06" ytl="35.12" xbr="447.16" ybr="139.26" z_order="0">
+    </box>
+    <box frame="1579" keyframe="1" outside="1" occluded="0" xtl="190.06" ytl="35.12" xbr="447.16" ybr="139.26" z_order="0">
+    </box>
+  </track>
+  <track id="29" label="Body Kick" source="manual">
+    <box frame="1586" keyframe="1" outside="0" occluded="0" xtl="185.09" ytl="133.05" xbr="571.82" ybr="257.40" z_order="0">
+    </box>
+    <box frame="1587" keyframe="1" outside="1" occluded="0" xtl="185.09" ytl="133.05" xbr="571.82" ybr="257.40" z_order="0">
+    </box>
+  </track>
+  <track id="30" label="Jab" source="manual">
+    <box frame="1638" keyframe="1" outside="0" occluded="0" xtl="146.54" ytl="33.88" xbr="449.96" ybr="140.20" z_order="0">
+    </box>
+    <box frame="1639" keyframe="1" outside="1" occluded="0" xtl="146.54" ytl="33.88" xbr="449.96" ybr="140.20" z_order="0">
+    </box>
+  </track>
+  <track id="31" label="Jab" source="manual">
+    <box frame="1650" keyframe="1" outside="0" occluded="0" xtl="171.41" ytl="32.63" xbr="397.73" ybr="121.54" z_order="0">
+    </box>
+    <box frame="1651" keyframe="1" outside="1" occluded="0" xtl="171.41" ytl="32.63" xbr="397.73" ybr="121.54" z_order="0">
+    </box>
+  </track>
+  <track id="32" label="Leg Kick" source="manual">
+    <box frame="1761" keyframe="1" outside="0" occluded="0" xtl="180.42" ytl="160.71" xbr="355.76" ybr="230.97" z_order="0">
+    </box>
+    <box frame="1762" keyframe="1" outside="1" occluded="0" xtl="180.42" ytl="160.71" xbr="355.76" ybr="230.97" z_order="0">
+    </box>
+  </track>
+  <track id="33" label="Jab" source="manual">
+    <box frame="1791" keyframe="1" outside="0" occluded="0" xtl="266.23" ytl="41.34" xbr="453.69" ybr="104.45" z_order="0">
+    </box>
+    <box frame="1792" keyframe="1" outside="1" occluded="0" xtl="266.23" ytl="41.34" xbr="453.69" ybr="104.45" z_order="0">
+    </box>
+  </track>
+  <track id="34" label="Leg Kick" source="manual">
+    <box frame="1798" keyframe="1" outside="0" occluded="0" xtl="313.79" ytl="185.90" xbr="468.30" ybr="262.68" z_order="0">
+    </box>
+    <box frame="1799" keyframe="1" outside="1" occluded="0" xtl="313.79" ytl="185.90" xbr="468.30" ybr="262.68" z_order="0">
+    </box>
+  </track>
+  <track id="35" label="Hook" source="manual">
+    <box frame="1808" keyframe="1" outside="0" occluded="0" xtl="294.83" ytl="53.46" xbr="504.05" ybr="116.88" z_order="0">
+    </box>
+    <box frame="1809" keyframe="1" outside="1" occluded="0" xtl="294.83" ytl="53.46" xbr="504.05" ybr="116.88" z_order="0">
+    </box>
+  </track>
+  <track id="36" label="Hook" source="manual">
+    <box frame="1813" keyframe="1" outside="0" occluded="0" xtl="304.16" ytl="43.51" xbr="522.70" ybr="130.87" z_order="0">
+    </box>
+    <box frame="1814" keyframe="1" outside="1" occluded="0" xtl="304.16" ytl="43.51" xbr="522.70" ybr="130.87" z_order="0">
+    </box>
+  </track>
+  <track id="37" label="Body Kick" source="manual">
+    <box frame="1859" keyframe="1" outside="0" occluded="0" xtl="148.71" ytl="42.27" xbr="320.94" ybr="154.81" z_order="0">
+    </box>
+    <box frame="1860" keyframe="1" outside="1" occluded="0" xtl="148.71" ytl="42.27" xbr="320.94" ybr="154.81" z_order="0">
+    </box>
+  </track>
+  <track id="38" label="Jab" source="manual">
+    <box frame="1921" keyframe="1" outside="0" occluded="0" xtl="299.18" ytl="47.55" xbr="463.64" ybr="97.61" z_order="0">
+    </box>
+    <box frame="1922" keyframe="1" outside="1" occluded="0" xtl="299.18" ytl="47.55" xbr="463.64" ybr="97.61" z_order="0">
+    </box>
+  </track>
+  <track id="39" label="Jab" source="manual">
+    <box frame="2102" keyframe="1" outside="0" occluded="0" xtl="197.52" ytl="38.23" xbr="464.26" ybr="128.07" z_order="0">
+    </box>
+    <box frame="2103" keyframe="1" outside="1" occluded="0" xtl="197.52" ytl="38.23" xbr="464.26" ybr="128.07" z_order="0">
+    </box>
+  </track>
+  <track id="40" label="Jab" source="manual">
+    <box frame="2113" keyframe="1" outside="0" occluded="0" xtl="176.07" ytl="21.75" xbr="479.49" ybr="125.90" z_order="0">
+    </box>
+    <box frame="2114" keyframe="1" outside="1" occluded="0" xtl="176.07" ytl="21.75" xbr="479.49" ybr="125.90" z_order="0">
+    </box>
+  </track>
+  <track id="41" label="Hook" source="manual">
+    <box frame="2178" keyframe="1" outside="0" occluded="0" xtl="96.49" ytl="110.66" xbr="385.61" ybr="226.31" z_order="0">
+    </box>
+    <box frame="2179" keyframe="1" outside="1" occluded="0" xtl="96.49" ytl="110.66" xbr="385.61" ybr="226.31" z_order="0">
+    </box>
+  </track>
+  <track id="42" label="Jab" source="manual">
+    <box frame="2336" keyframe="1" outside="0" occluded="0" xtl="182.29" ytl="133.36" xbr="507.47" ybr="231.28" z_order="0">
+    </box>
+    <box frame="2337" keyframe="1" outside="1" occluded="0" xtl="182.29" ytl="133.36" xbr="507.47" ybr="231.28" z_order="0">
+    </box>
+  </track>
+  <track id="43" label="Hook" source="manual">
+    <box frame="2395" keyframe="1" outside="0" occluded="0" xtl="291.72" ytl="52.53" xbr="530.79" ybr="132.42" z_order="0">
+    </box>
+    <box frame="2396" keyframe="1" outside="1" occluded="0" xtl="291.72" ytl="52.53" xbr="530.79" ybr="132.42" z_order="0">
+    </box>
+  </track>
+  <track id="44" label="Hook" source="manual">
+    <box frame="2402" keyframe="1" outside="0" occluded="0" xtl="320.94" ytl="46.93" xbr="607.89" ybr="153.88" z_order="0">
+    </box>
+    <box frame="2403" keyframe="1" outside="1" occluded="0" xtl="320.94" ytl="46.93" xbr="607.89" ybr="153.88" z_order="0">
+    </box>
+  </track>
+  <track id="45" label="Jab" source="manual">
+    <box frame="2528" keyframe="1" outside="0" occluded="0" xtl="215.87" ytl="34.81" xbr="450.58" ybr="133.36" z_order="0">
+    </box>
+    <box frame="2529" keyframe="1" outside="1" occluded="0" xtl="215.87" ytl="34.81" xbr="450.58" ybr="133.36" z_order="0">
+    </box>
+  </track>
+  <track id="46" label="Jab" source="manual">
+    <box frame="2541" keyframe="1" outside="0" occluded="0" xtl="260.01" ytl="61.85" xbr="431.62" ybr="139.57" z_order="0">
+    </box>
+    <box frame="2542" keyframe="1" outside="1" occluded="0" xtl="260.01" ytl="61.85" xbr="431.62" ybr="139.57" z_order="0">
+    </box>
+  </track>
+  <track id="47" label="Hook" source="manual">
+    <box frame="2548" keyframe="1" outside="0" occluded="0" xtl="221.15" ytl="55.02" xbr="445.61" ybr="152.32" z_order="0">
+    </box>
+    <box frame="2549" keyframe="1" outside="1" occluded="0" xtl="221.15" ytl="55.02" xbr="445.61" ybr="152.32" z_order="0">
+    </box>
+  </track>
+  <track id="48" label="Jab" source="manual">
+    <box frame="2650" keyframe="1" outside="0" occluded="0" xtl="197.21" ytl="64.96" xbr="497.21" ybr="175.64" z_order="0">
+    </box>
+    <box frame="2651" keyframe="1" outside="1" occluded="0" xtl="197.21" ytl="64.96" xbr="497.21" ybr="175.64" z_order="0">
+    </box>
+  </track>
+  <track id="49" label="Jab" source="manual">
+    <box frame="2669" keyframe="1" outside="0" occluded="0" xtl="178.25" ytl="72.42" xbr="500.94" ybr="181.85" z_order="0">
+    </box>
+    <box frame="2670" keyframe="1" outside="1" occluded="0" xtl="178.25" ytl="72.42" xbr="500.94" ybr="181.85" z_order="0">
+    </box>
+  </track>
+  <track id="50" label="Jab" source="manual">
+    <box frame="2705" keyframe="1" outside="0" occluded="0" xtl="151.51" ytl="64.34" xbr="524.88" ybr="180.92" z_order="0">
+    </box>
+    <box frame="2706" keyframe="1" outside="1" occluded="0" xtl="151.51" ytl="64.34" xbr="524.88" ybr="180.92" z_order="0">
+    </box>
+  </track>
+  <track id="51" label="Jab" source="manual">
+    <box frame="2717" keyframe="1" outside="0" occluded="0" xtl="190.99" ytl="58.44" xbr="515.87" ybr="156.67" z_order="0">
+    </box>
+    <box frame="2718" keyframe="1" outside="1" occluded="0" xtl="190.99" ytl="58.44" xbr="515.87" ybr="156.67" z_order="0">
+    </box>
+  </track>
+  <track id="52" label="Jab" source="manual">
+    <box frame="2979" keyframe="1" outside="0" occluded="0" xtl="160.22" ytl="57.50" xbr="453.69" ybr="145.48" z_order="0">
+    </box>
+    <box frame="2980" keyframe="1" outside="1" occluded="0" xtl="160.22" ytl="57.50" xbr="453.69" ybr="145.48" z_order="0">
+    </box>
+  </track>
+  <track id="53" label="Upper" source="manual">
+    <box frame="3008" keyframe="1" outside="0" occluded="0" xtl="144.05" ytl="56.26" xbr="346.12" ybr="161.96" z_order="0">
+    </box>
+    <box frame="3009" keyframe="1" outside="1" occluded="0" xtl="144.05" ytl="56.26" xbr="346.12" ybr="161.96" z_order="0">
+    </box>
+  </track>
+  <track id="54" label="Jab" source="manual">
+    <box frame="3053" keyframe="1" outside="0" occluded="0" xtl="254.10" ytl="138.95" xbr="394.31" ybr="227.55" z_order="0">
+    </box>
+    <box frame="3054" keyframe="1" outside="1" occluded="0" xtl="254.10" ytl="138.95" xbr="394.31" ybr="227.55" z_order="0">
+    </box>
+  </track>
+  <track id="55" label="Hook" source="manual">
+    <box frame="3071" keyframe="1" outside="0" occluded="0" xtl="235.76" ytl="66.52" xbr="405.19" ybr="140.51" z_order="0">
+    </box>
+    <box frame="3072" keyframe="1" outside="1" occluded="0" xtl="235.76" ytl="66.52" xbr="405.19" ybr="140.51" z_order="0">
+    </box>
+  </track>
+  <track id="56" label="Jab" source="manual">
+    <box frame="3119" keyframe="1" outside="0" occluded="0" xtl="224.88" ytl="60.92" xbr="452.45" ybr="157.30" z_order="0">
+    </box>
+    <box frame="3120" keyframe="1" outside="1" occluded="0" xtl="224.88" ytl="60.92" xbr="452.45" ybr="157.30" z_order="0">
+    </box>
+  </track>
+  <track id="57" label="Hook" source="manual">
+    <box frame="3125" keyframe="1" outside="0" occluded="0" xtl="241.67" ytl="61.85" xbr="456.18" ybr="156.36" z_order="0">
+    </box>
+    <box frame="3126" keyframe="1" outside="1" occluded="0" xtl="241.67" ytl="61.85" xbr="456.18" ybr="156.36" z_order="0">
+    </box>
+  </track>
+  <track id="58" label="Body Kick" source="manual">
+    <box frame="3255" keyframe="1" outside="0" occluded="0" xtl="155.87" ytl="93.25" xbr="389.65" ybr="174.39" z_order="0">
+    </box>
+    <box frame="3256" keyframe="1" outside="1" occluded="0" xtl="155.87" ytl="93.25" xbr="389.65" ybr="174.39" z_order="0">
+    </box>
+  </track>
+  <track id="59" label="Body Kick" source="manual">
+    <box frame="3296" keyframe="1" outside="0" occluded="0" xtl="251.62" ytl="100.71" xbr="447.16" ybr="176.57" z_order="0">
+    </box>
+    <box frame="3297" keyframe="1" outside="1" occluded="0" xtl="251.62" ytl="100.71" xbr="447.16" ybr="176.57" z_order="0">
+    </box>
+  </track>
+  <track id="60" label="Hook" source="manual">
+    <box frame="3312" keyframe="1" outside="0" occluded="0" xtl="182.29" ytl="30.14" xbr="329.96" ybr="109.11" z_order="0">
+    </box>
+    <box frame="3313" keyframe="1" outside="1" occluded="0" xtl="182.29" ytl="30.14" xbr="329.96" ybr="109.11" z_order="0">
+    </box>
+  </track>
+  <track id="61" label="Hook" source="manual">
+    <box frame="3324" keyframe="1" outside="0" occluded="0" xtl="260.32" ytl="48.18" xbr="430.68" ybr="124.34" z_order="0">
+    </box>
+    <box frame="3325" keyframe="1" outside="1" occluded="0" xtl="260.32" ytl="48.18" xbr="430.68" ybr="124.34" z_order="0">
+    </box>
+  </track>
+  <track id="62" label="Jab" source="manual">
+    <box frame="3389" keyframe="1" outside="0" occluded="0" xtl="193.79" ytl="28.59" xbr="408.61" ybr="84.55" z_order="0">
+    </box>
+    <box frame="3390" keyframe="1" outside="1" occluded="0" xtl="193.79" ytl="28.59" xbr="408.61" ybr="84.55" z_order="0">
+    </box>
+  </track>
+  <track id="63" label="Jab" source="manual">
+    <box frame="3405" keyframe="1" outside="0" occluded="0" xtl="211.51" ytl="28.90" xbr="403.02" ybr="82.06" z_order="0">
+    </box>
+    <box frame="3406" keyframe="1" outside="1" occluded="0" xtl="211.51" ytl="28.90" xbr="403.02" ybr="82.06" z_order="0">
+    </box>
+  </track>
+  <track id="64" label="Body Kick" source="manual">
+    <box frame="3428" keyframe="1" outside="0" occluded="0" xtl="181.67" ytl="96.05" xbr="416.07" ybr="166.93" z_order="0">
+    </box>
+    <box frame="3429" keyframe="1" outside="1" occluded="0" xtl="181.67" ytl="96.05" xbr="416.07" ybr="166.93" z_order="0">
+    </box>
+  </track>
+  <track id="65" label="Hook" source="manual">
+    <box frame="3462" keyframe="1" outside="0" occluded="0" xtl="268.40" ytl="39.47" xbr="464.88" ybr="116.26" z_order="0">
+    </box>
+    <box frame="3463" keyframe="1" outside="1" occluded="0" xtl="268.40" ytl="39.47" xbr="464.88" ybr="116.26" z_order="0">
+    </box>
+  </track>
+  <track id="66" label="Upper" source="manual">
+    <box frame="3468" keyframe="1" outside="0" occluded="0" xtl="287.37" ytl="67.45" xbr="468.30" ybr="145.79" z_order="0">
+    </box>
+    <box frame="3469" keyframe="1" outside="1" occluded="0" xtl="287.37" ytl="67.45" xbr="468.30" ybr="145.79" z_order="0">
+    </box>
+  </track>
+  <track id="67" label="Body Kick" source="manual">
+    <box frame="3513" keyframe="1" outside="0" occluded="0" xtl="140.94" ytl="73.67" xbr="348.92" ybr="157.61" z_order="0">
+    </box>
+    <box frame="3514" keyframe="1" outside="1" occluded="0" xtl="140.94" ytl="73.67" xbr="348.92" ybr="157.61" z_order="0">
+    </box>
+  </track>
+  <track id="68" label="Hook" source="manual">
+    <box frame="3527" keyframe="1" outside="0" occluded="0" xtl="187.89" ytl="36.67" xbr="373.79" ybr="104.13" z_order="0">
+    </box>
+    <box frame="3528" keyframe="1" outside="1" occluded="0" xtl="187.89" ytl="36.67" xbr="373.79" ybr="104.13" z_order="0">
+    </box>
+  </track>
+  <track id="69" label="Jab" source="manual">
+    <box frame="3597" keyframe="1" outside="0" occluded="0" xtl="252.86" ytl="41.03" xbr="440.32" ybr="110.97" z_order="0">
+    </box>
+    <box frame="3598" keyframe="1" outside="1" occluded="0" xtl="252.86" ytl="41.03" xbr="440.32" ybr="110.97" z_order="0">
+    </box>
+  </track>
+  <track id="70" label="Jab" source="manual">
+    <box frame="3602" keyframe="1" outside="0" occluded="0" xtl="288.30" ytl="76.16" xbr="430.68" ybr="140.20" z_order="0">
+    </box>
+    <box frame="3603" keyframe="1" outside="1" occluded="0" xtl="288.30" ytl="76.16" xbr="430.68" ybr="140.20" z_order="0">
+    </box>
+  </track>
+  <track id="71" label="Jab" source="manual">
+    <box frame="3749" keyframe="1" outside="0" occluded="0" xtl="172.65" ytl="39.47" xbr="315.35" ybr="101.65" z_order="0">
+    </box>
+    <box frame="3750" keyframe="1" outside="1" occluded="0" xtl="172.65" ytl="39.47" xbr="315.35" ybr="101.65" z_order="0">
+    </box>
+  </track>
+  <track id="72" label="Jab" source="manual">
+    <box frame="3756" keyframe="1" outside="0" occluded="0" xtl="157.11" ytl="48.80" xbr="345.19" ybr="110.35" z_order="0">
+    </box>
+    <box frame="3757" keyframe="1" outside="1" occluded="0" xtl="157.11" ytl="48.80" xbr="345.19" ybr="110.35" z_order="0">
+    </box>
+  </track>
+  <track id="73" label="Body Kick" source="manual">
+    <box frame="3832" keyframe="1" outside="0" occluded="0" xtl="285.19" ytl="116.26" xbr="494.10" ybr="185.59" z_order="0">
+    </box>
+    <box frame="3833" keyframe="1" outside="1" occluded="0" xtl="285.19" ytl="116.26" xbr="494.10" ybr="185.59" z_order="0">
+    </box>
+  </track>
+  <track id="74" label="Jab" source="manual">
+    <box frame="3834" keyframe="1" outside="0" occluded="0" xtl="295.76" ytl="82.06" xbr="550.99" ybr="148.90" z_order="0">
+    </box>
+    <box frame="3835" keyframe="1" outside="1" occluded="0" xtl="295.76" ytl="82.06" xbr="550.99" ybr="148.90" z_order="0">
+    </box>
+  </track>
+  <track id="75" label="Leg Kick" source="manual">
+    <box frame="4230" keyframe="1" outside="0" occluded="0" xtl="187.57" ytl="137.40" xbr="426.95" ybr="221.65" z_order="0">
+    </box>
+    <box frame="4231" keyframe="1" outside="1" occluded="0" xtl="187.57" ytl="137.40" xbr="426.95" ybr="221.65" z_order="0">
+    </box>
+  </track>
+  <track id="76" label="Jab" source="manual">
+    <box frame="4251" keyframe="1" outside="0" occluded="0" xtl="200.01" ytl="44.45" xbr="410.48" ybr="114.70" z_order="0">
+    </box>
+    <box frame="4252" keyframe="1" outside="1" occluded="0" xtl="200.01" ytl="44.45" xbr="410.48" ybr="114.70" z_order="0">
+    </box>
+  </track>
+  <track id="77" label="Leg Kick" source="manual">
+    <box frame="4260" keyframe="1" outside="0" occluded="0" xtl="157.11" ytl="148.59" xbr="415.76" ybr="231.91" z_order="0">
+    </box>
+    <box frame="4261" keyframe="1" outside="1" occluded="0" xtl="157.11" ytl="148.59" xbr="415.76" ybr="231.91" z_order="0">
+    </box>
+  </track>
+  <track id="78" label="Jab" source="manual">
+    <box frame="4304" keyframe="1" outside="0" occluded="0" xtl="206.23" ytl="58.44" xbr="415.76" ybr="117.81" z_order="0">
+    </box>
+    <box frame="4305" keyframe="1" outside="1" occluded="0" xtl="206.23" ytl="58.44" xbr="415.76" ybr="117.81" z_order="0">
+    </box>
+  </track>
+  <track id="79" label="Jab" source="manual">
+    <box frame="4313" keyframe="1" outside="0" occluded="0" xtl="235.76" ytl="60.61" xbr="438.77" ybr="123.10" z_order="0">
+    </box>
+    <box frame="4314" keyframe="1" outside="1" occluded="0" xtl="235.76" ytl="60.61" xbr="438.77" ybr="123.10" z_order="0">
+    </box>
+  </track>
+  <track id="80" label="Body Kick" source="manual">
+    <box frame="4336" keyframe="1" outside="0" occluded="0" xtl="207.78" ytl="103.51" xbr="387.78" ybr="170.66" z_order="0">
+    </box>
+    <box frame="4337" keyframe="1" outside="1" occluded="0" xtl="207.78" ytl="103.51" xbr="387.78" ybr="170.66" z_order="0">
+    </box>
+  </track>
+  <track id="81" label="Body Kick" source="manual">
+    <box frame="4367" keyframe="1" outside="0" occluded="0" xtl="208.09" ytl="101.96" xbr="412.96" ybr="185.90" z_order="0">
+    </box>
+    <box frame="4368" keyframe="1" outside="1" occluded="0" xtl="208.09" ytl="101.96" xbr="412.96" ybr="185.90" z_order="0">
+    </box>
+  </track>
+  <track id="82" label="Jab" source="manual">
+    <box frame="4425" keyframe="1" outside="0" occluded="0" xtl="172.65" ytl="45.69" xbr="484.78" ybr="126.52" z_order="0">
+    </box>
+    <box frame="4426" keyframe="1" outside="1" occluded="0" xtl="172.65" ytl="45.69" xbr="484.78" ybr="126.52" z_order="0">
+    </box>
+  </track>
+  <track id="83" label="Jab" source="manual">
+    <box frame="4434" keyframe="1" outside="0" occluded="0" xtl="172.96" ytl="47.87" xbr="495.04" ybr="142.99" z_order="0">
+    </box>
+    <box frame="4435" keyframe="1" outside="1" occluded="0" xtl="172.96" ytl="47.87" xbr="495.04" ybr="142.99" z_order="0">
+    </box>
+  </track>
+  <track id="84" label="Jab" source="manual">
+    <box frame="4468" keyframe="1" outside="0" occluded="0" xtl="156.80" ytl="46.62" xbr="487.57" ybr="131.49" z_order="0">
+    </box>
+    <box frame="4469" keyframe="1" outside="1" occluded="0" xtl="156.80" ytl="46.62" xbr="487.57" ybr="131.49" z_order="0">
+    </box>
+  </track>
+  <track id="85" label="Jab" source="manual">
+    <box frame="4480" keyframe="1" outside="0" occluded="0" xtl="214.62" ytl="32.63" xbr="488.82" ybr="116.57" z_order="0">
+    </box>
+    <box frame="4481" keyframe="1" outside="1" occluded="0" xtl="214.62" ytl="32.63" xbr="488.82" ybr="116.57" z_order="0">
+    </box>
+  </track>
+  <track id="86" label="Body Kick" source="manual">
+    <box frame="4488" keyframe="1" outside="0" occluded="0" xtl="186.95" ytl="102.58" xbr="467.37" ybr="215.12" z_order="0">
+    </box>
+    <box frame="4489" keyframe="1" outside="1" occluded="0" xtl="186.95" ytl="102.58" xbr="467.37" ybr="215.12" z_order="0">
+    </box>
+  </track>
+  <track id="87" label="Jab" source="manual">
+    <box frame="4511" keyframe="1" outside="0" occluded="0" xtl="215.87" ytl="47.87" xbr="455.24" ybr="136.16" z_order="0">
+    </box>
+    <box frame="4512" keyframe="1" outside="1" occluded="0" xtl="215.87" ytl="47.87" xbr="455.24" ybr="136.16" z_order="0">
+    </box>
+  </track>
+  <track id="88" label="Hook" source="manual">
+    <box frame="4517" keyframe="1" outside="0" occluded="0" xtl="207.47" ytl="55.95" xbr="410.17" ybr="138.95" z_order="0">
+    </box>
+    <box frame="4518" keyframe="1" outside="1" occluded="0" xtl="207.47" ytl="55.95" xbr="410.17" ybr="138.95" z_order="0">
+    </box>
+  </track>
+  <track id="89" label="Jab" source="manual">
+    <box frame="4576" keyframe="1" outside="0" occluded="0" xtl="192.55" ytl="25.17" xbr="495.66" ybr="110.66" z_order="0">
+    </box>
+    <box frame="4577" keyframe="1" outside="1" occluded="0" xtl="192.55" ytl="25.17" xbr="495.66" ybr="110.66" z_order="0">
+    </box>
+  </track>
+  <track id="90" label="Jab" source="manual">
+    <box frame="4609" keyframe="1" outside="0" occluded="0" xtl="227.68" ytl="34.50" xbr="465.50" ybr="106.31" z_order="0">
+    </box>
+    <box frame="4610" keyframe="1" outside="1" occluded="0" xtl="227.68" ytl="34.50" xbr="465.50" ybr="106.31" z_order="0">
+    </box>
+  </track>
+  <track id="91" label="Jab" source="manual">
+    <box frame="4617" keyframe="1" outside="0" occluded="0" xtl="218.04" ytl="47.87" xbr="491.31" ybr="139.89" z_order="0">
+    </box>
+    <box frame="4618" keyframe="1" outside="1" occluded="0" xtl="218.04" ytl="47.87" xbr="491.31" ybr="139.89" z_order="0">
+    </box>
+  </track>
+  <track id="92" label="Jab" source="manual">
+    <box frame="4623" keyframe="1" outside="0" occluded="0" xtl="254.10" ytl="73.05" xbr="510.58" ybr="201.75" z_order="0">
+    </box>
+    <box frame="4624" keyframe="1" outside="1" occluded="0" xtl="254.10" ytl="73.05" xbr="510.58" ybr="201.75" z_order="0">
+    </box>
+  </track>
+  <track id="93" label="Hook" source="manual">
+    <box frame="4637" keyframe="1" outside="0" occluded="0" xtl="264.05" ytl="36.67" xbr="478.56" ybr="134.91" z_order="0">
+    </box>
+    <box frame="4638" keyframe="1" outside="1" occluded="0" xtl="264.05" ytl="36.67" xbr="478.56" ybr="134.91" z_order="0">
+    </box>
+  </track>
+  <track id="94" label="Leg Kick" source="manual">
+    <box frame="4712" keyframe="1" outside="0" occluded="0" xtl="267.78" ytl="177.19" xbr="439.39" ybr="263.31" z_order="0">
+    </box>
+    <box frame="4713" keyframe="1" outside="1" occluded="0" xtl="267.78" ytl="177.19" xbr="439.39" ybr="263.31" z_order="0">
+    </box>
+  </track>
+  <track id="95" label="Body Kick" source="manual">
+    <box frame="4759" keyframe="1" outside="0" occluded="0" xtl="279.28" ytl="74.91" xbr="511.82" ybr="144.24" z_order="0">
+    </box>
+    <box frame="4760" keyframe="1" outside="1" occluded="0" xtl="279.28" ytl="74.91" xbr="511.82" ybr="144.24" z_order="0">
+    </box>
+  </track>
+  <track id="96" label="Jab" source="manual">
+    <box frame="4766" keyframe="1" outside="0" occluded="0" xtl="269.96" ytl="38.54" xbr="469.54" ybr="115.02" z_order="0">
+    </box>
+    <box frame="4767" keyframe="1" outside="1" occluded="0" xtl="269.96" ytl="38.54" xbr="469.54" ybr="115.02" z_order="0">
+    </box>
+  </track>
+  <track id="97" label="Hook" source="manual">
+    <box frame="4776" keyframe="1" outside="0" occluded="0" xtl="236.69" ytl="42.27" xbr="469.85" ybr="119.99" z_order="0">
+    </box>
+    <box frame="4777" keyframe="1" outside="1" occluded="0" xtl="236.69" ytl="42.27" xbr="469.85" ybr="119.99" z_order="0">
+    </box>
+  </track>
+  <track id="98" label="Hook" source="manual">
+    <box frame="4785" keyframe="1" outside="0" occluded="0" xtl="191.62" ytl="45.38" xbr="452.13" ybr="138.64" z_order="0">
+    </box>
+    <box frame="4786" keyframe="1" outside="1" occluded="0" xtl="191.62" ytl="45.38" xbr="452.13" ybr="138.64" z_order="0">
+    </box>
+  </track>
+  <track id="99" label="Jab" source="manual">
+    <box frame="4960" keyframe="1" outside="0" occluded="0" xtl="245.09" ytl="38.23" xbr="492.86" ybr="111.28" z_order="0">
+    </box>
+    <box frame="4961" keyframe="1" outside="1" occluded="0" xtl="245.09" ytl="38.23" xbr="492.86" ybr="111.28" z_order="0">
+    </box>
+  </track>
+  <track id="100" label="Leg Kick" source="manual">
+    <box frame="4965" keyframe="1" outside="0" occluded="0" xtl="215.24" ytl="148.28" xbr="472.65" ybr="218.23" z_order="0">
+    </box>
+    <box frame="4966" keyframe="1" outside="1" occluded="0" xtl="215.24" ytl="148.28" xbr="472.65" ybr="218.23" z_order="0">
+    </box>
+  </track>
+  <track id="101" label="Jab" source="manual">
+    <box frame="5043" keyframe="1" outside="0" occluded="0" xtl="260.01" ytl="41.03" xbr="434.41" ybr="95.74" z_order="0">
+    </box>
+    <box frame="5044" keyframe="1" outside="1" occluded="0" xtl="260.01" ytl="41.03" xbr="434.41" ybr="95.74" z_order="0">
+    </box>
+  </track>
+  <track id="102" label="Jab" source="manual">
+    <box frame="5298" keyframe="1" outside="0" occluded="0" xtl="254.10" ytl="41.65" xbr="460.53" ybr="107.24" z_order="0">
+    </box>
+    <box frame="5299" keyframe="1" outside="1" occluded="0" xtl="254.10" ytl="41.65" xbr="460.53" ybr="107.24" z_order="0">
+    </box>
+  </track>
+  <track id="103" label="High Kick" source="manual">
+    <box frame="5307" keyframe="1" outside="0" occluded="0" xtl="202.81" ytl="36.67" xbr="502.50" ybr="189.00" z_order="0">
+    </box>
+    <box frame="5308" keyframe="1" outside="1" occluded="0" xtl="202.81" ytl="36.67" xbr="502.50" ybr="189.00" z_order="0">
+    </box>
+  </track>
+  <track id="104" label="Jab" source="manual">
+    <box frame="5376" keyframe="1" outside="0" occluded="0" xtl="214.93" ytl="26.73" xbr="396.49" ybr="111.60" z_order="0">
+    </box>
+    <box frame="5377" keyframe="1" outside="1" occluded="0" xtl="214.93" ytl="26.73" xbr="396.49" ybr="111.60" z_order="0">
+    </box>
+  </track>
+  <track id="105" label="Jab" source="manual">
+    <box frame="5396" keyframe="1" outside="0" occluded="0" xtl="217.11" ytl="57.19" xbr="481.05" ybr="128.07" z_order="0">
+    </box>
+    <box frame="5397" keyframe="1" outside="1" occluded="0" xtl="217.11" ytl="57.19" xbr="481.05" ybr="128.07" z_order="0">
+    </box>
+  </track>
+  <track id="106" label="Jab" source="manual">
+    <box frame="5402" keyframe="1" outside="0" occluded="0" xtl="195.04" ytl="98.85" xbr="511.20" ybr="185.59" z_order="0">
+    </box>
+    <box frame="5403" keyframe="1" outside="1" occluded="0" xtl="195.04" ytl="98.85" xbr="511.20" ybr="185.59" z_order="0">
+    </box>
+  </track>
+  <track id="107" label="Leg Kick" source="manual">
+    <box frame="5479" keyframe="1" outside="0" occluded="0" xtl="134.41" ytl="177.50" xbr="435.04" ybr="270.77" z_order="0">
+    </box>
+    <box frame="5480" keyframe="1" outside="1" occluded="0" xtl="134.41" ytl="177.50" xbr="435.04" ybr="270.77" z_order="0">
+    </box>
+  </track>
+  <track id="108" label="Jab" source="manual">
+    <box frame="5499" keyframe="1" outside="0" occluded="0" xtl="215.24" ytl="46.93" xbr="519.60" ybr="119.68" z_order="0">
+    </box>
+    <box frame="5500" keyframe="1" outside="1" occluded="0" xtl="215.24" ytl="46.93" xbr="519.60" ybr="119.68" z_order="0">
+    </box>
+  </track>
+  <track id="109" label="Leg Kick" source="manual">
+    <box frame="5507" keyframe="1" outside="0" occluded="0" xtl="238.56" ytl="160.09" xbr="495.66" ybr="280.09" z_order="0">
+    </box>
+    <box frame="5508" keyframe="1" outside="1" occluded="0" xtl="238.56" ytl="160.09" xbr="495.66" ybr="280.09" z_order="0">
+    </box>
+  </track>
+  <track id="110" label="Hook" source="manual">
+    <box frame="5517" keyframe="1" outside="0" occluded="0" xtl="248.51" ytl="58.12" xbr="499.08" ybr="144.55" z_order="0">
+    </box>
+    <box frame="5518" keyframe="1" outside="1" occluded="0" xtl="248.51" ytl="58.12" xbr="499.08" ybr="144.55" z_order="0">
+    </box>
+  </track>
+  <track id="111" label="Jab" source="manual">
+    <box frame="5533" keyframe="1" outside="0" occluded="0" xtl="247.57" ytl="51.28" xbr="494.73" ybr="123.41" z_order="0">
+    </box>
+    <box frame="5534" keyframe="1" outside="1" occluded="0" xtl="247.57" ytl="51.28" xbr="494.73" ybr="123.41" z_order="0">
+    </box>
+  </track>
+  <track id="112" label="Jab" source="manual">
+    <box frame="5621" keyframe="1" outside="0" occluded="0" xtl="182.91" ytl="55.33" xbr="491.62" ybr="136.16" z_order="0">
+    </box>
+    <box frame="5622" keyframe="1" outside="1" occluded="0" xtl="182.91" ytl="55.33" xbr="491.62" ybr="136.16" z_order="0">
+    </box>
+  </track>
+  <track id="113" label="Body Kick" source="manual">
+    <box frame="5642" keyframe="1" outside="0" occluded="0" xtl="101.46" ytl="97.30" xbr="452.13" ybr="207.97" z_order="0">
+    </box>
+    <box frame="5643" keyframe="1" outside="1" occluded="0" xtl="101.46" ytl="97.30" xbr="452.13" ybr="207.97" z_order="0">
+    </box>
+  </track>
+  <track id="114" label="Jab" source="manual">
+    <box frame="5697" keyframe="1" outside="0" occluded="0" xtl="191.31" ytl="53.15" xbr="474.21" ybr="129.00" z_order="0">
+    </box>
+    <box frame="5698" keyframe="1" outside="1" occluded="0" xtl="191.31" ytl="53.15" xbr="474.21" ybr="129.00" z_order="0">
+    </box>
+  </track>
+  <track id="115" label="Jab" source="manual">
+    <box frame="5713" keyframe="1" outside="0" occluded="0" xtl="230.79" ytl="40.09" xbr="524.26" ybr="114.39" z_order="0">
+    </box>
+    <box frame="5714" keyframe="1" outside="1" occluded="0" xtl="230.79" ytl="40.09" xbr="524.26" ybr="114.39" z_order="0">
+    </box>
+  </track>
+  <track id="116" label="Leg Kick" source="manual">
+    <box frame="5743" keyframe="1" outside="0" occluded="0" xtl="101.77" ytl="198.64" xbr="402.08" ybr="315.84" z_order="0">
+    </box>
+    <box frame="5744" keyframe="1" outside="1" occluded="0" xtl="101.77" ytl="198.64" xbr="402.08" ybr="315.84" z_order="0">
+    </box>
+  </track>
+  <track id="117" label="Jab" source="manual">
+    <box frame="5792" keyframe="1" outside="0" occluded="0" xtl="220.84" ytl="56.26" xbr="421.98" ybr="157.61" z_order="0">
+    </box>
+    <box frame="5793" keyframe="1" outside="1" occluded="0" xtl="220.84" ytl="56.26" xbr="421.98" ybr="157.61" z_order="0">
+    </box>
+  </track>
+  <track id="118" label="Hook" source="manual">
+    <box frame="5852" keyframe="1" outside="0" occluded="0" xtl="171.72" ytl="76.16" xbr="431.31" ybr="190.56" z_order="0">
+    </box>
+    <box frame="5853" keyframe="1" outside="1" occluded="0" xtl="171.72" ytl="76.16" xbr="431.31" ybr="190.56" z_order="0">
+    </box>
+  </track>
+  <track id="119" label="Hook" source="manual">
+    <box frame="5867" keyframe="1" outside="0" occluded="0" xtl="217.11" ytl="96.67" xbr="463.33" ybr="205.48" z_order="0">
+    </box>
+    <box frame="5868" keyframe="1" outside="1" occluded="0" xtl="217.11" ytl="96.67" xbr="463.33" ybr="205.48" z_order="0">
+    </box>
+  </track>
+  <track id="120" label="Body Kick" source="manual">
+    <box frame="5883" keyframe="1" outside="0" occluded="0" xtl="188.51" ytl="104.13" xbr="457.11" ybr="204.24" z_order="0">
+    </box>
+    <box frame="5884" keyframe="1" outside="1" occluded="0" xtl="188.51" ytl="104.13" xbr="457.11" ybr="204.24" z_order="0">
+    </box>
+  </track>
+  <track id="121" label="Leg Kick" source="manual">
+    <box frame="6148" keyframe="1" outside="0" occluded="0" xtl="247.90" ytl="120.30" xbr="360.74" ybr="186.52" z_order="0">
+    </box>
+    <box frame="6149" keyframe="1" outside="1" occluded="0" xtl="247.90" ytl="120.30" xbr="360.74" ybr="186.52" z_order="0">
+    </box>
+  </track>
+  <track id="122" label="Hook" source="manual">
+    <box frame="6160" keyframe="1" outside="0" occluded="0" xtl="234.21" ytl="29.52" xbr="375.97" ybr="91.08" z_order="0">
+    </box>
+    <box frame="6161" keyframe="1" outside="1" occluded="0" xtl="234.21" ytl="29.52" xbr="375.97" ybr="91.08" z_order="0">
+    </box>
+  </track>
+  <track id="123" label="Jab" source="manual">
+    <box frame="6221" keyframe="1" outside="0" occluded="0" xtl="153.38" ytl="30.77" xbr="435.04" ybr="94.81" z_order="0">
+    </box>
+    <box frame="6222" keyframe="1" outside="1" occluded="0" xtl="153.38" ytl="30.77" xbr="435.04" ybr="94.81" z_order="0">
+    </box>
+  </track>
+  <track id="124" label="Jab" source="manual">
+    <box frame="6232" keyframe="1" outside="0" occluded="0" xtl="163.33" ytl="28.28" xbr="448.09" ybr="107.55" z_order="0">
+    </box>
+    <box frame="6233" keyframe="1" outside="1" occluded="0" xtl="163.33" ytl="28.28" xbr="448.09" ybr="107.55" z_order="0">
+    </box>
+  </track>
+  <track id="125" label="Leg Kick" source="manual">
+    <box frame="6239" keyframe="1" outside="0" occluded="0" xtl="167.68" ytl="214.50" xbr="331.20" ybr="292.22" z_order="0">
+    </box>
+    <box frame="6240" keyframe="1" outside="1" occluded="0" xtl="167.68" ytl="214.50" xbr="331.20" ybr="292.22" z_order="0">
+    </box>
+  </track>
+  <track id="126" label="Hook" source="manual">
+    <box frame="6246" keyframe="1" outside="0" occluded="0" xtl="235.76" ytl="41.34" xbr="466.75" ybr="119.99" z_order="0">
+    </box>
+    <box frame="6247" keyframe="1" outside="1" occluded="0" xtl="235.76" ytl="41.34" xbr="466.75" ybr="119.99" z_order="0">
+    </box>
+  </track>
+  <track id="127" label="Jab" source="manual">
+    <box frame="6367" keyframe="1" outside="0" occluded="0" xtl="185.40" ytl="46.31" xbr="464.26" ybr="125.59" z_order="0">
+    </box>
+    <box frame="6368" keyframe="1" outside="1" occluded="0" xtl="185.40" ytl="46.31" xbr="464.26" ybr="125.59" z_order="0">
+    </box>
+  </track>
+  <track id="128" label="Jab" source="manual">
+    <box frame="6374" keyframe="1" outside="0" occluded="0" xtl="237.94" ytl="36.98" xbr="446.85" ybr="119.37" z_order="0">
+    </box>
+    <box frame="6375" keyframe="1" outside="1" occluded="0" xtl="237.94" ytl="36.98" xbr="446.85" ybr="119.37" z_order="0">
+    </box>
+  </track>
+  <track id="129" label="Jab" source="manual">
+    <box frame="6452" keyframe="1" outside="0" occluded="0" xtl="201.88" ytl="45.38" xbr="431.93" ybr="117.50" z_order="0">
+    </box>
+    <box frame="6453" keyframe="1" outside="1" occluded="0" xtl="201.88" ytl="45.38" xbr="431.93" ybr="117.50" z_order="0">
+    </box>
+  </track>
+  <track id="130" label="Jab" source="manual">
+    <box frame="6465" keyframe="1" outside="0" occluded="0" xtl="192.24" ytl="40.09" xbr="436.28" ybr="105.07" z_order="0">
+    </box>
+    <box frame="6466" keyframe="1" outside="1" occluded="0" xtl="192.24" ytl="40.09" xbr="436.28" ybr="105.07" z_order="0">
+    </box>
+  </track>
+  <track id="131" label="High Kick" source="manual">
+    <box frame="6476" keyframe="1" outside="0" occluded="0" xtl="168.61" ytl="78.33" xbr="361.05" ybr="160.09" z_order="0">
+    </box>
+    <box frame="6477" keyframe="1" outside="1" occluded="0" xtl="168.61" ytl="78.33" xbr="361.05" ybr="160.09" z_order="0">
+    </box>
+  </track>
+  <track id="132" label="Jab" source="manual">
+    <box frame="6501" keyframe="1" outside="0" occluded="0" xtl="294.83" ytl="27.04" xbr="505.92" ybr="102.89" z_order="0">
+    </box>
+    <box frame="6502" keyframe="1" outside="1" occluded="0" xtl="294.83" ytl="27.04" xbr="505.92" ybr="102.89" z_order="0">
+    </box>
+  </track>
+  <track id="133" label="Jab" source="manual">
+    <box frame="6673" keyframe="1" outside="0" occluded="0" xtl="219.91" ytl="55.02" xbr="390.58" ybr="128.69" z_order="0">
+    </box>
+    <box frame="6674" keyframe="1" outside="1" occluded="0" xtl="219.91" ytl="55.02" xbr="390.58" ybr="128.69" z_order="0">
+    </box>
+  </track>
+  <track id="134" label="Hook" source="manual">
+    <box frame="6679" keyframe="1" outside="0" occluded="0" xtl="251.62" ytl="48.49" xbr="400.22" ybr="121.23" z_order="0">
+    </box>
+    <box frame="6680" keyframe="1" outside="1" occluded="0" xtl="251.62" ytl="48.49" xbr="400.22" ybr="121.23" z_order="0">
+    </box>
+  </track>
+  <track id="135" label="High Kick" source="manual">
+    <box frame="6743" keyframe="1" outside="0" occluded="0" xtl="233.27" ytl="49.42" xbr="353.90" ybr="111.28" z_order="0">
+    </box>
+    <box frame="6744" keyframe="1" outside="1" occluded="0" xtl="233.27" ytl="49.42" xbr="353.90" ybr="111.28" z_order="0">
+    </box>
+  </track>
+  <track id="136" label="High Kick" source="manual">
+    <box frame="6874" keyframe="1" outside="0" occluded="0" xtl="154.62" ytl="86.10" xbr="430.68" ybr="187.45" z_order="0">
+    </box>
+    <box frame="6875" keyframe="1" outside="1" occluded="0" xtl="154.62" ytl="86.10" xbr="430.68" ybr="187.45" z_order="0">
+    </box>
+  </track>
+  <track id="137" label="Leg Kick" source="manual">
+    <box frame="6917" keyframe="1" outside="0" occluded="0" xtl="303.53" ytl="140.51" xbr="383.12" ybr="217.61" z_order="0">
+    </box>
+    <box frame="6918" keyframe="1" outside="1" occluded="0" xtl="303.53" ytl="140.51" xbr="383.12" ybr="217.61" z_order="0">
+    </box>
+  </track>
+  <track id="138" label="Jab" source="manual">
+    <box frame="7169" keyframe="1" outside="0" occluded="0" xtl="220.53" ytl="56.26" xbr="468.30" ybr="139.26" z_order="0">
+    </box>
+    <box frame="7170" keyframe="1" outside="1" occluded="0" xtl="220.53" ytl="56.26" xbr="468.30" ybr="139.26" z_order="0">
+    </box>
+  </track>
+  <track id="139" label="Jab" source="manual">
+    <box frame="7240" keyframe="1" outside="0" occluded="0" xtl="274.93" ytl="32.01" xbr="465.19" ybr="115.02" z_order="0">
+    </box>
+    <box frame="7241" keyframe="1" outside="1" occluded="0" xtl="274.93" ytl="32.01" xbr="465.19" ybr="115.02" z_order="0">
+    </box>
+  </track>
+  <track id="140" label="Jab" source="manual">
+    <box frame="7255" keyframe="1" outside="0" occluded="0" xtl="276.80" ytl="41.34" xbr="474.52" ybr="131.49" z_order="0">
+    </box>
+    <box frame="7256" keyframe="1" outside="1" occluded="0" xtl="276.80" ytl="41.34" xbr="474.52" ybr="131.49" z_order="0">
+    </box>
+  </track>
+  <track id="141" label="Hook" source="manual">
+    <box frame="7259" keyframe="1" outside="0" occluded="0" xtl="254.41" ytl="43.51" xbr="467.68" ybr="128.07" z_order="0">
+    </box>
+    <box frame="7260" keyframe="1" outside="1" occluded="0" xtl="254.41" ytl="43.51" xbr="467.68" ybr="128.07" z_order="0">
+    </box>
+  </track>
+  <track id="142" label="Body Kick" source="manual">
+    <box frame="7306" keyframe="1" outside="0" occluded="0" xtl="229.23" ytl="122.17" xbr="455.24" ybr="202.68" z_order="0">
+    </box>
+    <box frame="7307" keyframe="1" outside="1" occluded="0" xtl="229.23" ytl="122.17" xbr="455.24" ybr="202.68" z_order="0">
+    </box>
+  </track>
+  <track id="143" label="Body Kick" source="manual">
+    <box frame="7425" keyframe="1" outside="0" occluded="0" xtl="217.73" ytl="128.38" xbr="450.27" ybr="189.00" z_order="0">
+    </box>
+    <box frame="7426" keyframe="1" outside="1" occluded="0" xtl="217.73" ytl="128.38" xbr="450.27" ybr="189.00" z_order="0">
+    </box>
+  </track>
+  <track id="144" label="Hook" source="manual">
+    <box frame="7431" keyframe="1" outside="0" occluded="0" xtl="230.79" ytl="50.04" xbr="431.31" ybr="127.76" z_order="0">
+    </box>
+    <box frame="7432" keyframe="1" outside="1" occluded="0" xtl="230.79" ytl="50.04" xbr="431.31" ybr="127.76" z_order="0">
+    </box>
+  </track>
+  <track id="145" label="Upper" source="manual">
+    <box frame="7440" keyframe="1" outside="0" occluded="0" xtl="218.97" ytl="46.93" xbr="439.39" ybr="156.67" z_order="0">
+    </box>
+    <box frame="7441" keyframe="1" outside="1" occluded="0" xtl="218.97" ytl="46.93" xbr="439.39" ybr="156.67" z_order="0">
+    </box>
+  </track>
+  <track id="146" label="High Kick" source="manual">
+    <box frame="7454" keyframe="1" outside="0" occluded="0" xtl="191.93" ytl="68.69" xbr="449.03" ybr="206.10" z_order="0">
+    </box>
+    <box frame="7455" keyframe="1" outside="1" occluded="0" xtl="191.93" ytl="68.69" xbr="449.03" ybr="206.10" z_order="0">
+    </box>
+  </track>
+  <track id="147" label="Jab" source="manual">
+    <box frame="7708" keyframe="1" outside="0" occluded="0" xtl="253.48" ytl="78.64" xbr="454.93" ybr="155.12" z_order="0">
+    </box>
+    <box frame="7709" keyframe="1" outside="1" occluded="0" xtl="253.48" ytl="78.64" xbr="454.93" ybr="155.12" z_order="0">
+    </box>
+  </track>
+  <track id="148" label="Jab" source="manual">
+    <box frame="7715" keyframe="1" outside="0" occluded="0" xtl="183.22" ytl="62.79" xbr="456.80" ybr="145.79" z_order="0">
+    </box>
+    <box frame="7716" keyframe="1" outside="1" occluded="0" xtl="183.22" ytl="62.79" xbr="456.80" ybr="145.79" z_order="0">
+    </box>
+  </track>
+  <track id="149" label="Body Kick" source="manual">
+    <box frame="8220" keyframe="1" outside="0" occluded="0" xtl="237.32" ytl="101.03" xbr="467.37" ybr="156.36" z_order="0">
+    </box>
+    <box frame="8221" keyframe="1" outside="1" occluded="0" xtl="237.32" ytl="101.03" xbr="467.37" ybr="156.36" z_order="0">
+    </box>
+  </track>
+  <track id="150" label="Hook" source="manual">
+    <box frame="8253" keyframe="1" outside="0" occluded="0" xtl="261.88" ytl="66.52" xbr="461.15" ybr="126.21" z_order="0">
+    </box>
+    <box frame="8254" keyframe="1" outside="1" occluded="0" xtl="261.88" ytl="66.52" xbr="461.15" ybr="126.21" z_order="0">
+    </box>
+  </track>
+  <track id="151" label="Body Kick" source="manual">
+    <box frame="8637" keyframe="1" outside="0" occluded="0" xtl="209.03" ytl="109.42" xbr="453.07" ybr="190.25" z_order="0">
+    </box>
+    <box frame="8638" keyframe="1" outside="1" occluded="0" xtl="209.03" ytl="109.42" xbr="453.07" ybr="190.25" z_order="0">
+    </box>
+  </track>
+  <track id="152" label="Hook" source="manual">
+    <box frame="8646" keyframe="1" outside="0" occluded="0" xtl="285.81" ytl="78.33" xbr="480.42" ybr="128.07" z_order="0">
+    </box>
+    <box frame="8647" keyframe="1" outside="1" occluded="0" xtl="285.81" ytl="78.33" xbr="480.42" ybr="128.07" z_order="0">
+    </box>
+  </track>
+  <track id="153" label="Leg Kick" source="manual">
+    <box frame="8819" keyframe="1" outside="0" occluded="0" xtl="203.12" ytl="161.65" xbr="339.28" ybr="236.88" z_order="0">
+    </box>
+    <box frame="8820" keyframe="1" outside="1" occluded="0" xtl="203.12" ytl="161.65" xbr="339.28" ybr="236.88" z_order="0">
+    </box>
+  </track>
+  <track id="154" label="Hook" source="manual">
+    <box frame="8863" keyframe="1" outside="0" occluded="0" xtl="200.32" ytl="59.68" xbr="426.02" ybr="146.10" z_order="0">
+    </box>
+    <box frame="8864" keyframe="1" outside="1" occluded="0" xtl="200.32" ytl="59.68" xbr="426.02" ybr="146.10" z_order="0">
+    </box>
+  </track>
+  <track id="155" label="Hook" source="manual">
+    <box frame="8875" keyframe="1" outside="0" occluded="0" xtl="193.79" ytl="52.84" xbr="407.06" ybr="127.45" z_order="0">
+    </box>
+    <box frame="8876" keyframe="1" outside="1" occluded="0" xtl="193.79" ytl="52.84" xbr="407.06" ybr="127.45" z_order="0">
+    </box>
+  </track>
+  <track id="156" label="Jab" source="manual">
+    <box frame="8936" keyframe="1" outside="0" occluded="0" xtl="235.14" ytl="35.43" xbr="439.39" ybr="150.14" z_order="0">
+    </box>
+    <box frame="8937" keyframe="1" outside="1" occluded="0" xtl="235.14" ytl="35.43" xbr="439.39" ybr="150.14" z_order="0">
+    </box>
+  </track>
+  <track id="157" label="Jab" source="manual">
+    <box frame="8946" keyframe="1" outside="0" occluded="0" xtl="217.11" ytl="43.82" xbr="392.45" ybr="128.38" z_order="0">
+    </box>
+    <box frame="8947" keyframe="1" outside="1" occluded="0" xtl="217.11" ytl="43.82" xbr="392.45" ybr="128.38" z_order="0">
+    </box>
+  </track>
+  <track id="158" label="Body Kick" source="manual">
+    <box frame="8985" keyframe="1" outside="0" occluded="0" xtl="230.79" ytl="106.93" xbr="484.78" ybr="184.96" z_order="0">
+    </box>
+    <box frame="8986" keyframe="1" outside="1" occluded="0" xtl="230.79" ytl="106.93" xbr="484.78" ybr="184.96" z_order="0">
+    </box>
+  </track>
+  <track id="159" label="Jab" source="manual">
+    <box frame="9005" keyframe="1" outside="0" occluded="0" xtl="243.53" ytl="78.95" xbr="432.86" ybr="134.29" z_order="0">
+    </box>
+    <box frame="9006" keyframe="1" outside="1" occluded="0" xtl="243.53" ytl="78.95" xbr="432.86" ybr="134.29" z_order="0">
+    </box>
+  </track>
+  <track id="160" label="Jab" source="manual">
+    <box frame="9011" keyframe="1" outside="0" occluded="0" xtl="207.16" ytl="59.99" xbr="414.83" ybr="132.74" z_order="0">
+    </box>
+    <box frame="9012" keyframe="1" outside="1" occluded="0" xtl="207.16" ytl="59.99" xbr="414.83" ybr="132.74" z_order="0">
+    </box>
+  </track>
+  <track id="161" label="Body Kick" source="manual">
+    <box frame="9019" keyframe="1" outside="0" occluded="0" xtl="112.34" ytl="91.08" xbr="416.69" ybr="196.78" z_order="0">
+    </box>
+    <box frame="9020" keyframe="1" outside="1" occluded="0" xtl="112.34" ytl="91.08" xbr="416.69" ybr="196.78" z_order="0">
+    </box>
+  </track>
+  <track id="162" label="Hook" source="manual">
+    <box frame="9136" keyframe="1" outside="0" occluded="0" xtl="132.86" ytl="67.14" xbr="346.12" ybr="143.93" z_order="0">
+    </box>
+    <box frame="9137" keyframe="1" outside="1" occluded="0" xtl="132.86" ytl="67.14" xbr="346.12" ybr="143.93" z_order="0">
+    </box>
+  </track>
+  <track id="163" label="Body Kick" source="manual">
+    <box frame="9180" keyframe="1" outside="0" occluded="0" xtl="130.37" ytl="90.46" xbr="407.37" ybr="195.22" z_order="0">
+    </box>
+    <box frame="9181" keyframe="1" outside="1" occluded="0" xtl="130.37" ytl="90.46" xbr="407.37" ybr="195.22" z_order="0">
+    </box>
+  </track>
+  <track id="164" label="Body Kick" source="manual">
+    <box frame="9253" keyframe="1" outside="0" occluded="0" xtl="174.52" ytl="123.72" xbr="505.61" ybr="216.67" z_order="0">
+    </box>
+    <box frame="9254" keyframe="1" outside="1" occluded="0" xtl="174.52" ytl="123.72" xbr="505.61" ybr="216.67" z_order="0">
+    </box>
+  </track>
+  <track id="165" label="Jab" source="manual">
+    <box frame="9259" keyframe="1" outside="0" occluded="0" xtl="158.35" ytl="76.16" xbr="453.38" ybr="150.14" z_order="0">
+    </box>
+    <box frame="9260" keyframe="1" outside="1" occluded="0" xtl="158.35" ytl="76.16" xbr="453.38" ybr="150.14" z_order="0">
+    </box>
+  </track>
+  <track id="166" label="Jab" source="manual">
+    <box frame="9363" keyframe="1" outside="0" occluded="0" xtl="216.18" ytl="73.05" xbr="434.73" ybr="133.05" z_order="0">
+    </box>
+    <box frame="9364" keyframe="1" outside="1" occluded="0" xtl="216.18" ytl="73.05" xbr="434.73" ybr="133.05" z_order="0">
+    </box>
+  </track>
+  <track id="167" label="Jab" source="manual">
+    <box frame="9373" keyframe="1" outside="0" occluded="0" xtl="155.24" ytl="142.37" xbr="497.83" ybr="217.92" z_order="0">
+    </box>
+    <box frame="9374" keyframe="1" outside="1" occluded="0" xtl="155.24" ytl="142.37" xbr="497.83" ybr="217.92" z_order="0">
+    </box>
+  </track>
+  <track id="168" label="Jab" source="manual">
+    <box frame="9415" keyframe="1" outside="0" occluded="0" xtl="209.34" ytl="53.46" xbr="480.11" ybr="163.20" z_order="0">
+    </box>
+    <box frame="9416" keyframe="1" outside="1" occluded="0" xtl="209.34" ytl="53.46" xbr="480.11" ybr="163.20" z_order="0">
+    </box>
+  </track>
+  <track id="169" label="Hook" source="manual">
+    <box frame="9445" keyframe="1" outside="0" occluded="0" xtl="170.79" ytl="40.71" xbr="459.28" ybr="125.27" z_order="0">
+    </box>
+    <box frame="9446" keyframe="1" outside="1" occluded="0" xtl="170.79" ytl="40.71" xbr="459.28" ybr="125.27" z_order="0">
+    </box>
+  </track>
+  <track id="170" label="Jab" source="manual">
+    <box frame="9501" keyframe="1" outside="0" occluded="0" xtl="195.35" ytl="24.55" xbr="345.50" ybr="88.90" z_order="0">
+    </box>
+    <box frame="9502" keyframe="1" outside="1" occluded="0" xtl="195.35" ytl="24.55" xbr="345.50" ybr="88.90" z_order="0">
+    </box>
+  </track>
+  <track id="171" label="Leg Kick" source="manual">
+    <box frame="9784" keyframe="1" outside="0" occluded="0" xtl="144.67" ytl="141.13" xbr="495.97" ybr="260.82" z_order="0">
+    </box>
+    <box frame="9785" keyframe="1" outside="1" occluded="0" xtl="144.67" ytl="141.13" xbr="495.97" ybr="260.82" z_order="0">
+    </box>
+  </track>
+  <track id="172" label="Leg Kick" source="manual">
+    <box frame="9817" keyframe="1" outside="0" occluded="0" xtl="195.04" ytl="189.32" xbr="426.33" ybr="282.27" z_order="0">
+    </box>
+    <box frame="9818" keyframe="1" outside="1" occluded="0" xtl="195.04" ytl="189.32" xbr="426.33" ybr="282.27" z_order="0">
+    </box>
+  </track>
+  <track id="173" label="Body Kick" source="manual">
+    <box frame="9838" keyframe="1" outside="0" occluded="0" xtl="255.66" ytl="110.35" xbr="500.32" ybr="183.72" z_order="0">
+    </box>
+    <box frame="9839" keyframe="1" outside="1" occluded="0" xtl="255.66" ytl="110.35" xbr="500.32" ybr="183.72" z_order="0">
+    </box>
+  </track>
+  <track id="174" label="Jab" source="manual">
+    <box frame="9902" keyframe="1" outside="0" occluded="0" xtl="298.25" ytl="60.92" xbr="458.04" ybr="107.55" z_order="0">
+    </box>
+    <box frame="9903" keyframe="1" outside="1" occluded="0" xtl="298.25" ytl="60.92" xbr="458.04" ybr="107.55" z_order="0">
+    </box>
+  </track>
+  <track id="175" label="Jab" source="manual">
+    <box frame="10088" keyframe="1" outside="0" occluded="0" xtl="121.05" ytl="128.69" xbr="282.70" ybr="163.82" z_order="0">
+    </box>
+    <box frame="10089" keyframe="1" outside="1" occluded="0" xtl="121.05" ytl="128.69" xbr="282.70" ybr="163.82" z_order="0">
+    </box>
+  </track>
+  <track id="176" label="Body Kick" source="manual">
+    <box frame="10088" keyframe="1" outside="0" occluded="0" xtl="337.42" ytl="142.06" xbr="463.02" ybr="200.20" z_order="0">
+    </box>
+    <box frame="10089" keyframe="1" outside="1" occluded="0" xtl="337.42" ytl="142.06" xbr="463.02" ybr="200.20" z_order="0">
+    </box>
+  </track>
+  <track id="177" label="Hook" source="manual">
+    <box frame="10173" keyframe="1" outside="0" occluded="0" xtl="174.83" ytl="87.35" xbr="399.60" ybr="132.42" z_order="0">
+    </box>
+    <box frame="10174" keyframe="1" outside="1" occluded="0" xtl="174.83" ytl="87.35" xbr="399.60" ybr="132.42" z_order="0">
+    </box>
+  </track>
+  <track id="178" label="Hook" source="manual">
+    <box frame="10179" keyframe="1" outside="0" occluded="0" xtl="201.88" ytl="71.49" xbr="411.10" ybr="156.05" z_order="0">
+    </box>
+    <box frame="10180" keyframe="1" outside="1" occluded="0" xtl="201.88" ytl="71.49" xbr="411.10" ybr="156.05" z_order="0">
+    </box>
+  </track>
+  <track id="179" label="Jab" source="manual">
+    <box frame="10214" keyframe="1" outside="0" occluded="0" xtl="181.98" ytl="53.46" xbr="370.68" ybr="137.71" z_order="0">
+    </box>
+    <box frame="10215" keyframe="1" outside="1" occluded="0" xtl="181.98" ytl="53.46" xbr="370.68" ybr="137.71" z_order="0">
+    </box>
+  </track>
+  <track id="180" label="Hook" source="manual">
+    <box frame="10221" keyframe="1" outside="0" occluded="0" xtl="169.23" ytl="89.21" xbr="361.05" ybr="167.24" z_order="0">
+    </box>
+    <box frame="10222" keyframe="1" outside="1" occluded="0" xtl="169.23" ytl="89.21" xbr="361.05" ybr="167.24" z_order="0">
+    </box>
+  </track>
+  <track id="181" label="Body Kick" source="manual">
+    <box frame="10348" keyframe="1" outside="0" occluded="0" xtl="157.73" ytl="69.00" xbr="404.57" ybr="159.78" z_order="0">
+    </box>
+    <box frame="10349" keyframe="1" outside="1" occluded="0" xtl="157.73" ytl="69.00" xbr="404.57" ybr="159.78" z_order="0">
+    </box>
+  </track>
+  <track id="182" label="Jab" source="manual">
+    <box frame="10434" keyframe="1" outside="0" occluded="0" xtl="148.71" ytl="89.21" xbr="402.70" ybr="198.64" z_order="0">
+    </box>
+    <box frame="10435" keyframe="1" outside="1" occluded="0" xtl="148.71" ytl="89.21" xbr="402.70" ybr="198.64" z_order="0">
+    </box>
+  </track>
+  <track id="183" label="Hook" source="manual">
+    <box frame="10441" keyframe="1" outside="0" occluded="0" xtl="107.99" ytl="156.36" xbr="474.83" ybr="277.30" z_order="0">
+    </box>
+    <box frame="10442" keyframe="1" outside="1" occluded="0" xtl="107.99" ytl="156.36" xbr="474.83" ybr="277.30" z_order="0">
+    </box>
+  </track>
+  <track id="184" label="Cross" source="manual">
+    <box frame="10855" keyframe="1" outside="0" occluded="0" xtl="230.79" ytl="73.98" xbr="504.05" ybr="190.56" z_order="0">
+    </box>
+    <box frame="10856" keyframe="1" outside="1" occluded="0" xtl="230.79" ytl="73.98" xbr="504.05" ybr="190.56" z_order="0">
+    </box>
+  </track>
+  <track id="185" label="Jab" source="manual">
+    <box frame="10862" keyframe="1" outside="0" occluded="0" xtl="280.53" ytl="85.48" xbr="516.18" ybr="175.64" z_order="0">
+    </box>
+    <box frame="10863" keyframe="1" outside="1" occluded="0" xtl="280.53" ytl="85.48" xbr="516.18" ybr="175.64" z_order="0">
+    </box>
+  </track>
+  <track id="186" label="Hook" source="manual">
+    <box frame="10874" keyframe="1" outside="0" occluded="0" xtl="241.98" ytl="67.76" xbr="533.90" ybr="165.69" z_order="0">
+    </box>
+    <box frame="10875" keyframe="1" outside="1" occluded="0" xtl="241.98" ytl="67.76" xbr="533.90" ybr="165.69" z_order="0">
+    </box>
+  </track>
+  <track id="187" label="Jab" source="manual">
+    <box frame="11382" keyframe="1" outside="0" occluded="0" xtl="189.44" ytl="38.23" xbr="437.21" ybr="122.79" z_order="0">
+    </box>
+    <box frame="11383" keyframe="1" outside="1" occluded="0" xtl="189.44" ytl="38.23" xbr="437.21" ybr="122.79" z_order="0">
+    </box>
+  </track>
+  <track id="188" label="Leg Kick" source="manual">
+    <box frame="11421" keyframe="1" outside="0" occluded="0" xtl="223.64" ytl="129.63" xbr="456.18" ybr="222.58" z_order="0">
+    </box>
+    <box frame="11422" keyframe="1" outside="1" occluded="0" xtl="223.64" ytl="129.63" xbr="456.18" ybr="222.58" z_order="0">
+    </box>
+  </track>
+  <track id="189" label="Hook" source="manual">
+    <box frame="11449" keyframe="1" outside="0" occluded="0" xtl="280.22" ytl="57.19" xbr="432.86" ybr="137.09" z_order="0">
+    </box>
+    <box frame="11450" keyframe="1" outside="1" occluded="0" xtl="280.22" ytl="57.19" xbr="432.86" ybr="137.09" z_order="0">
+    </box>
+  </track>
+  <track id="190" label="Jab" source="manual">
+    <box frame="11467" keyframe="1" outside="0" occluded="0" xtl="222.70" ytl="40.40" xbr="432.55" ybr="116.88" z_order="0">
+    </box>
+    <box frame="11468" keyframe="1" outside="1" occluded="0" xtl="222.70" ytl="40.40" xbr="432.55" ybr="116.88" z_order="0">
+    </box>
+  </track>
+  <track id="191" label="Jab" source="manual">
+    <box frame="11521" keyframe="1" outside="0" occluded="0" xtl="271.51" ytl="46.31" xbr="453.07" ybr="102.27" z_order="0">
+    </box>
+    <box frame="11522" keyframe="1" outside="1" occluded="0" xtl="271.51" ytl="46.31" xbr="453.07" ybr="102.27" z_order="0">
+    </box>
+  </track>
+  <track id="192" label="Hook" source="manual">
+    <box frame="11680" keyframe="1" outside="0" occluded="0" xtl="213.69" ytl="43.82" xbr="463.33" ybr="130.56" z_order="0">
+    </box>
+    <box frame="11681" keyframe="1" outside="1" occluded="0" xtl="213.69" ytl="43.82" xbr="463.33" ybr="130.56" z_order="0">
+    </box>
+  </track>
+  <track id="193" label="Jab" source="manual">
+    <box frame="11732" keyframe="1" outside="0" occluded="0" xtl="263.43" ytl="53.15" xbr="501.56" ybr="133.36" z_order="0">
+    </box>
+    <box frame="11733" keyframe="1" outside="1" occluded="0" xtl="263.43" ytl="53.15" xbr="501.56" ybr="133.36" z_order="0">
+    </box>
+  </track>
+  <track id="194" label="Jab" source="manual">
+    <box frame="11739" keyframe="1" outside="0" occluded="0" xtl="245.71" ytl="50.97" xbr="490.06" ybr="135.53" z_order="0">
+    </box>
+    <box frame="11740" keyframe="1" outside="1" occluded="0" xtl="245.71" ytl="50.97" xbr="490.06" ybr="135.53" z_order="0">
+    </box>
+  </track>
+  <track id="195" label="Jab" source="manual">
+    <box frame="11747" keyframe="1" outside="0" occluded="0" xtl="245.40" ytl="41.96" xbr="483.53" ybr="120.61" z_order="0">
+    </box>
+    <box frame="11748" keyframe="1" outside="1" occluded="0" xtl="245.40" ytl="41.96" xbr="483.53" ybr="120.61" z_order="0">
+    </box>
+  </track>
+  <track id="196" label="Hook" source="manual">
+    <box frame="11764" keyframe="1" outside="0" occluded="0" xtl="242.60" ytl="85.79" xbr="486.64" ybr="185.59" z_order="0">
+    </box>
+    <box frame="11765" keyframe="1" outside="1" occluded="0" xtl="242.60" ytl="85.79" xbr="486.64" ybr="185.59" z_order="0">
+    </box>
+  </track>
+  <track id="197" label="Cross" source="manual">
+    <box frame="11771" keyframe="1" outside="0" occluded="0" xtl="227.37" ytl="65.90" xbr="462.08" ybr="172.53" z_order="0">
+    </box>
+    <box frame="11772" keyframe="1" outside="1" occluded="0" xtl="227.37" ytl="65.90" xbr="462.08" ybr="172.53" z_order="0">
+    </box>
+  </track>
+  <track id="198" label="High Kick" source="manual">
+    <box frame="11784" keyframe="1" outside="0" occluded="0" xtl="298.87" ytl="55.33" xbr="477.00" ybr="126.21" z_order="0">
+    </box>
+    <box frame="11785" keyframe="1" outside="1" occluded="0" xtl="298.87" ytl="55.33" xbr="477.00" ybr="126.21" z_order="0">
+    </box>
+  </track>
+  <track id="199" label="Jab" source="manual">
+    <box frame="11931" keyframe="1" outside="0" occluded="0" xtl="298.25" ytl="96.67" xbr="436.59" ybr="178.44" z_order="0">
+    </box>
+    <box frame="11932" keyframe="1" outside="1" occluded="0" xtl="298.25" ytl="96.67" xbr="436.59" ybr="178.44" z_order="0">
+    </box>
+  </track>
+  <track id="200" label="Jab" source="manual">
+    <box frame="12166" keyframe="1" outside="0" occluded="0" xtl="167.37" ytl="37.92" xbr="361.36" ybr="131.18" z_order="0">
+    </box>
+    <box frame="12167" keyframe="1" outside="1" occluded="0" xtl="167.37" ytl="37.92" xbr="361.36" ybr="131.18" z_order="0">
+    </box>
+  </track>
+  <track id="201" label="Hook" source="manual">
+    <box frame="12249" keyframe="1" outside="0" occluded="0" xtl="218.66" ytl="50.04" xbr="327.47" ybr="113.46" z_order="0">
+    </box>
+    <box frame="12250" keyframe="1" outside="1" occluded="0" xtl="218.66" ytl="50.04" xbr="327.47" ybr="113.46" z_order="0">
+    </box>
+  </track>
+  <track id="202" label="Hook" source="manual">
+    <box frame="12272" keyframe="1" outside="0" occluded="0" xtl="167.99" ytl="52.84" xbr="360.11" ybr="115.64" z_order="0">
+    </box>
+    <box frame="12273" keyframe="1" outside="1" occluded="0" xtl="167.99" ytl="52.84" xbr="360.11" ybr="115.64" z_order="0">
+    </box>
+  </track>
+  <track id="203" label="High Kick" source="manual">
+    <box frame="12492" keyframe="1" outside="0" occluded="0" xtl="245.40" ytl="64.34" xbr="493.79" ybr="142.68" z_order="0">
+    </box>
+    <box frame="12493" keyframe="1" outside="1" occluded="0" xtl="245.40" ytl="64.34" xbr="493.79" ybr="142.68" z_order="0">
+    </box>
+  </track>
+  <track id="204" label="Body Kick" source="manual">
+    <box frame="12596" keyframe="1" outside="0" occluded="0" xtl="219.91" ytl="123.10" xbr="554.73" ybr="231.28" z_order="0">
+    </box>
+    <box frame="12597" keyframe="1" outside="1" occluded="0" xtl="219.91" ytl="123.10" xbr="554.73" ybr="231.28" z_order="0">
+    </box>
+  </track>
+  <track id="205" label="Jab" source="manual">
+    <box frame="12876" keyframe="1" outside="0" occluded="0" xtl="105.50" ytl="70.25" xbr="493.79" ybr="207.97" z_order="0">
+    </box>
+    <box frame="12877" keyframe="1" outside="1" occluded="0" xtl="105.50" ytl="70.25" xbr="493.79" ybr="207.97" z_order="0">
+    </box>
+  </track>
+  <track id="206" label="Jab" source="manual">
+    <box frame="12883" keyframe="1" outside="0" occluded="0" xtl="128.82" ytl="240.00" xbr="493.50" ybr="335.43" z_order="0">
+    </box>
+    <box frame="12884" keyframe="1" outside="1" occluded="0" xtl="128.82" ytl="240.00" xbr="493.50" ybr="335.43" z_order="0">
+    </box>
+  </track>
+  <track id="207" label="Jab" source="manual">
+    <box frame="12894" keyframe="1" outside="0" occluded="0" xtl="221.15" ytl="43.20" xbr="488.51" ybr="144.55" z_order="0">
+    </box>
+    <box frame="12895" keyframe="1" outside="1" occluded="0" xtl="221.15" ytl="43.20" xbr="488.51" ybr="144.55" z_order="0">
+    </box>
+  </track>
+</annotations>
