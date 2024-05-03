@@ -1,6 +1,7 @@
 import csv
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 from sklearn.model_selection import KFold
+from sklearn.preprocessing import StandardScaler
 import xml.etree.ElementTree as ET
 import os
 import numpy as np
@@ -10,13 +11,15 @@ from torch.nn import CrossEntropyLoss
 from torch.optim import Adam
 from torch.utils.data import DataLoader, Dataset
 import pandas as pd
+import warnings
+from sklearn.exceptions import DataConversionWarning
+warnings.filterwarnings("ignore", message="X does not have valid feature names")
 
 
 # Constants
 STRIKE_TYPES = ['No Strike', 'Jab', 'Cross', 'Hook', 'Upper', 'Leg Kick', 'Body Kick', 'High Kick']
 NUM_CLASSES = len(STRIKE_TYPES)
 STRIKE_TYPE_TO_ID = {name: i for i, name in enumerate(STRIKE_TYPES)}
-
 
 
 class EarlyStopping:
@@ -61,8 +64,10 @@ class ValidationKeypointDataset(Dataset):
         keypoints = torch.from_numpy(keypoints)
         return {'keypoints': keypoints, 'labels': label, 'frame_number': frame_number, 'actual_strike': actual_strike}
 
+
 class ValidationComparisonDataset(Dataset):
     """ Dataset for validation comparison, no keypoints needed. """
+
     def __init__(self, csv_file):
         self.data_frame = pd.read_csv(csv_file)
         if not {'Frame Number', 'Predicted Strike', 'Actual Strike'}.issubset(self.data_frame.columns):
@@ -79,6 +84,7 @@ class ValidationComparisonDataset(Dataset):
             'actual_strike': STRIKE_TYPE_TO_ID[row['Actual Strike']]
         }
 
+
 def validate_without_inference(validation_loader):
     correct = 0
     total = 0
@@ -89,36 +95,25 @@ def validate_without_inference(validation_loader):
         total += predicted_strikes.size(0)  # Total number of predictions in this batch
     return correct / total
 
-class KeypointDataset(Dataset):
-    def __init__(self, csv_file, annotations, transform=None):
-        self.data_frame = pd.read_csv(csv_file)
-        self.annotations = annotations
-        self.transform = transform
-        self.keypoint_columns = [col for col in self.data_frame.columns if 'keypoint' in col and ('_x' in col or '_y' in col)]
 
-        # Verify that 'frame_id' exists in the DataFrame
-        if 'frame_id' not in self.data_frame.columns:
-            raise ValueError(f"The column 'frame_id' is missing from the CSV file: {csv_file}. Columns found: {self.data_frame.columns}")
+class KeypointDataset(Dataset):
+    def __init__(self, data_frame, annotations):
+        self.data_frame = data_frame
+        self.annotations = annotations
+        self.scaler = StandardScaler()
+        self.keypoint_columns = [col for col in self.data_frame.columns if 'keypoint' in col]
+        self.scaler.fit(self.data_frame[self.keypoint_columns].astype(np.float32))
 
     def __len__(self):
         return len(self.data_frame)
 
     def __getitem__(self, idx):
         row = self.data_frame.iloc[idx]
-        try:
-            frame_id = int(row['frame_id'])
-        except KeyError:
-            raise KeyError(f"'frame_id' column not found in the CSV file. Available columns: {self.data_frame.columns}")
-
+        keypoints = self.scaler.transform([row[self.keypoint_columns].values.astype(np.float32)])[0]
+        frame_id = int(row['frame_id'])  # Ensure your CSV has this column or adjust accordingly
         label = self.annotations.get(frame_id, STRIKE_TYPE_TO_ID['No Strike'])
-        keypoints = row[self.keypoint_columns].values.astype(np.float32).reshape(-1)
-        keypoints = torch.from_numpy(keypoints)
-        if self.transform:
-            keypoints = self.transform(keypoints)
-        return {'keypoints': keypoints, 'labels': label}
-
-
-
+        return {'keypoints': torch.from_numpy(keypoints).float(), 'labels': torch.tensor(label, dtype=torch.long),
+                'Frame Number': frame_id}
 
 
 class HybridBoxingLSTM(nn.Module):
@@ -129,14 +124,14 @@ class HybridBoxingLSTM(nn.Module):
         self.dropout = nn.Dropout(dropout_rate)
 
     def forward(self, x):
+        x = x.float()  # Ensure input tensor is float32
         if x.dim() == 2:
-            x = x.unsqueeze(1)
-        h0 = torch.zeros(self.lstm.num_layers, x.size(0), self.lstm.hidden_size).to(x.device)
-        c0 = torch.zeros(self.lstm.num_layers, x.size(0), self.lstm.hidden_size).to(x.device)
+            x = x.unsqueeze(1)  # Ensure input is 3D as expected by LSTM
+        h0 = torch.zeros(self.lstm.num_layers, x.size(0), self.lstm.hidden_size, dtype=torch.float32).to(x.device)
+        c0 = torch.zeros(self.lstm.num_layers, x.size(0), self.lstm.hidden_size, dtype=torch.float32).to(x.device)
         out, _ = self.lstm(x, (h0, c0))
         out = self.dropout(out)
-        out = self.fc(out[:, -1, :])
-        return out
+        return self.fc(out[:, -1, :])  # Predict based on the last output
 
 def parse_annotations(xml_file):
     tree = ET.parse(xml_file)
@@ -148,6 +143,7 @@ def parse_annotations(xml_file):
         for frame_id in frame_ids:
             annotations[frame_id] = STRIKE_TYPE_TO_ID.get(label, STRIKE_TYPE_TO_ID['No Strike'])
     return annotations
+
 
 def validate_model(model, validation_loader, device):
     """ Function to evaluate the model on the validation set """
@@ -169,58 +165,76 @@ def validate_model(model, validation_loader, device):
     conf_matrix = confusion_matrix(y_true, y_pred)
     return accuracy, precision, recall, f1, conf_matrix
 
-def train_until_threshold_met(csv_files, xml_files, validation_csv_files, model_save_dir, device, input_size, num_layers):
-    early_stopping = EarlyStopping(patience=10, min_delta=0.01)
-    for csv_file, xml_file, validation_csv in zip(csv_files, xml_files, validation_csv_files):
-        print(f"Training on {csv_file}")
-        annotations = parse_annotations(xml_file)
-        train_dataset = KeypointDataset(csv_file, annotations)
+
+warnings.filterwarnings(action='ignore', category=DataConversionWarning)
+
+
+def train_with_cross_validation(csv_file, xml_file, model_save_dir, device, input_size, num_layers, k_folds=5):
+    # Load the data
+    data = pd.read_csv(csv_file)
+    if not isinstance(data, pd.DataFrame):
+        raise ValueError("Data should be a pandas DataFrame.")
+
+    print(f"Data loaded successfully, DataFrame shape: {data.shape}")
+
+    # Parse annotations
+    annotations = parse_annotations(xml_file)
+
+    # Set up K-fold cross-validation
+    kfold = KFold(n_splits=k_folds, shuffle=True, random_state=42)
+
+    # Train and validate across folds
+    for fold, (train_idx, val_idx) in enumerate(kfold.split(data)):
+        print(f"Training fold {fold + 1}/{k_folds}")
+
+        # Extract train and validation data using indices
+        train_data = data.iloc[train_idx]
+        val_data = data.iloc[val_idx]
+
+        # Setup datasets and dataloaders
+        train_dataset = KeypointDataset(train_data, annotations)
+        val_dataset = KeypointDataset(val_data, annotations)
         train_loader = DataLoader(train_dataset, batch_size=10, shuffle=True)
+        val_loader = DataLoader(val_dataset, batch_size=10, shuffle=False)
 
-        validation_dataset = ValidationComparisonDataset(validation_csv)
-        validation_loader = DataLoader(validation_dataset, batch_size=10, shuffle=False)
-
+        # Initialize model, optimizer, and loss function
         model = HybridBoxingLSTM(input_size, 128, num_layers).to(device)
         optimizer = Adam(model.parameters(), lr=0.001)
         loss_function = CrossEntropyLoss()
 
-        best_accuracy = 0.0
-        epoch = 0
-        while True:
+        # Training loop
+        for epoch in range(50):  # Use more epochs as needed
             model.train()
-            total_loss = 0
-            for data in train_loader:
-                keypoints = data['keypoints'].to(device)
-                labels = data['labels'].to(device)
+            for batch in train_loader:
+                keypoints = batch['keypoints'].to(device)
+                labels = batch['labels'].to(device)
                 optimizer.zero_grad()
                 outputs = model(keypoints)
                 loss = loss_function(outputs, labels)
                 loss.backward()
                 optimizer.step()
-                total_loss += loss.item()
 
-            validation_accuracy = validate_without_inference(validation_loader)
-            print(f"Epoch {epoch}: Validation Accuracy: {validation_accuracy:.2f}")
+            # Validation loop
+            model.eval()
+            correct, total = 0, 0
+            with torch.no_grad():
+                for batch in val_loader:
+                    keypoints = batch['keypoints'].to(device)
+                    labels = batch['labels'].to(device)
+                    outputs = model(keypoints)
+                    _, predicted = torch.max(outputs.data, 1)
+                    total += labels.size(0)
+                    correct += (predicted == labels).sum().item()
+            accuracy = correct / total
+            print(f"Fold {fold + 1}, Epoch {epoch + 1}: Validation Accuracy = {accuracy:.4f}")
 
-            if validation_accuracy > best_accuracy:
-                best_accuracy = validation_accuracy
-                model_path = os.path.join(model_save_dir, f"model_epoch_{epoch}.pth")
+            # Save model if accuracy threshold is met
+            if accuracy > 0.90:
+                model_path = os.path.join(model_save_dir, f'model_fold_{fold + 1}_epoch_{epoch + 1}.pth')
                 torch.save(model.state_dict(), model_path)
-                print(f"Model saved at {model_path}")
+                print(f"Model saved for fold {fold + 1}, epoch {epoch + 1}.")
 
-            early_stopping(validation_accuracy)
-            if early_stopping.early_stop:
-                print("Early stopping triggered.")
-                break
-
-            epoch += 1
-            if epoch >= 100:
-                print("Maximum epochs reached without meeting the accuracy threshold.")
-                break
-
-            print(f"Epoch {epoch}: Average Loss: {total_loss / len(train_loader):.4f}")
-
-
+    print("Training completed for all folds.")
 
 def validate_by_strike_type(loader, model, device):
     model.eval()
@@ -242,11 +256,13 @@ def validate_by_strike_type(loader, model, device):
             accuracies[strike] = accuracy_score(specific_labels, specific_preds)
     return accuracies
 
+
 def compute_class_weights(labels):
     label_counts = np.bincount(labels, minlength=NUM_CLASSES)
     class_weights = 1. / label_counts
     class_weights[label_counts == 0] = 0  # handle classes with zero samples gracefully
     return class_weights
+
 
 def compare_with_validation_data(validation_csv, predictions, model_save_dir, epoch):
     # Load validation data
@@ -275,6 +291,7 @@ def make_predictions(model, loader, device):
             predictions.extend(preds.cpu().numpy())
     return predictions
 
+
 def save_predictions_to_file(loader, predictions, filepath):
     with open(filepath, mode='w', newline='') as file:
         writer = csv.writer(file)
@@ -294,6 +311,7 @@ def compare_predictions(validation_data, predictions, filepath):
             actual_strike = data['actual_strike']
             predicted_strike = STRIKE_TYPES[pred]
             writer.writerow([frame_number, predicted_strike, actual_strike])
+
 
 # Function to write validation results to CSV file
 def write_validation_results(loader, model, device, filepath):
@@ -317,7 +335,7 @@ def write_validation_results(loader, model, device, filepath):
 # Main Function
 if __name__ == '__main__':
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    input_size = 34  # Number of input features (e.g., number of keypoints * coordinates)
+    input_size = 51  # Number of input features (e.g., number of keypoints * coordinates)
     num_layers = 2  # Number of LSTM layers
     num_classes = 8  # Number of classes (number of different strike types)
     model_save_dir = 'C:/Users/12.99 a pillow/PycharmProjects/CS482FinalProject/Model'  # Directory to save the trained models
@@ -348,4 +366,6 @@ if __name__ == '__main__':
     ]
 
     # Call the training function with all necessary parameters
-    train_until_threshold_met(csv_files, xml_files, validation_csv_files, model_save_dir, device, input_size, num_layers)
+    for csv_file, xml_file in zip(csv_files, xml_files):
+        print(f"Starting training for {csv_file} using annotations from {xml_file}")
+        train_with_cross_validation(csv_file, xml_file, model_save_dir, device, input_size, num_layers)

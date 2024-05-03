@@ -486,15 +486,15 @@ Frame Number,Predicted Strike,Actual Strike
 484,No Strike,No Strike
 485,No Strike,No Strike
 486,No Strike,Leg Kick
-487,No Strike,Leg Kick
+487,Leg Kick,Leg Kick
 488,No Strike,Leg Kick
 489,No Strike,Leg Kick
 490,No Strike,Leg Kick
 491,No Strike,Leg Kick
-492,No Strike,Leg Kick
+492,Leg Kick,Leg Kick
 493,No Strike,Leg Kick
 494,No Strike,Leg Kick
-495,Leg Kick,Leg Kick
+495,No Strike,Leg Kick
 496,Leg Kick,Leg Kick
 497,No Strike,Leg Kick
 498,No Strike,No Strike
@@ -1437,7 +1437,7 @@ Frame Number,Predicted Strike,Actual Strike
 1435,No Strike,Jab
 1436,No Strike,Jab
 1437,No Strike,Jab
-1438,No Strike,Jab
+1438,Jab,Jab
 1439,No Strike,Jab
 1440,No Strike,No Strike
 1441,No Strike,No Strike
@@ -1901,7 +1901,7 @@ Frame Number,Predicted Strike,Actual Strike
 1899,No Strike,No Strike
 1900,No Strike,No Strike
 1901,No Strike,No Strike
-1902,No Strike,Jab
+1902,Jab,Jab
 1903,No Strike,Jab
 1904,No Strike,Jab
 1905,No Strike,Jab
@@ -1909,7 +1909,7 @@ Frame Number,Predicted Strike,Actual Strike
 1907,No Strike,Jab
 1908,No Strike,Jab
 1909,No Strike,Jab
-1910,No Strike,Jab
+1910,Jab,Jab
 1911,No Strike,Jab
 1912,No Strike,Jab
 1913,No Strike,Jab
@@ -2256,7 +2256,7 @@ Frame Number,Predicted Strike,Actual Strike
 2254,No Strike,No Strike
 2255,No Strike,No Strike
 2256,No Strike,High Kick
-2257,No Strike,High Kick
+2257,High Kick,High Kick
 2258,No Strike,High Kick
 2259,No Strike,High Kick
 2260,No Strike,High Kick
@@ -2862,16 +2862,16 @@ Frame Number,Predicted Strike,Actual Strike
 2860,No Strike,No Strike
 2861,No Strike,No Strike
 2862,No Strike,Body Kick
-2863,No Strike,Body Kick
+2863,Body Kick,Body Kick
 2864,No Strike,Body Kick
 2865,No Strike,Body Kick
 2866,No Strike,Body Kick
-2867,No Strike,Body Kick
+2867,Body Kick,Body Kick
 2868,No Strike,Body Kick
 2869,No Strike,Body Kick
 2870,No Strike,Body Kick
-2871,No Strike,Body Kick
-2872,No Strike,Body Kick
+2871,Body Kick,Body Kick
+2872,Body Kick,Body Kick
 2873,No Strike,Body Kick
 2874,No Strike,No Strike
 2875,No Strike,No Strike
@@ -3414,13 +3414,13 @@ Frame Number,Predicted Strike,Actual Strike
 3412,No Strike,No Strike
 3413,No Strike,No Strike
 3414,No Strike,Jab
-3415,No Strike,Jab
+3415,Jab,Jab
 3416,No Strike,Jab
 3417,No Strike,Jab
 3418,No Strike,Jab
-3419,No Strike,Jab
+3419,Jab,Jab
 3420,No Strike,Jab
-3421,No Strike,Jab
+3421,Jab,Jab
 3422,No Strike,Jab
 3423,No Strike,Jab
 3424,No Strike,Jab
@@ -3433,7 +3433,7 @@ Frame Number,Predicted Strike,Actual Strike
 3431,No Strike,Body Kick
 3432,No Strike,Body Kick
 3433,No Strike,Body Kick
-3434,No Strike,Body Kick
+3434,Body Kick,Body Kick
 3435,No Strike,Body Kick
 3436,No Strike,Body Kick
 3437,No Strike,Body Kick
@@ -4435,7 +4435,7 @@ Frame Number,Predicted Strike,Actual Strike
 4433,No Strike,No Strike
 4434,No Strike,No Strike
 4435,No Strike,No Strike
-4436,No Strike,No Strike
+4436,Jab,No Strike
 4437,No Strike,No Strike
 4438,No Strike,No Strike
 4439,No Strike,No Strike
@@ -4446,17 +4446,17 @@ Frame Number,Predicted Strike,Actual Strike
 4444,No Strike,No Strike
 4445,No Strike,No Strike
 4446,No Strike,Jab
-4447,No Strike,Jab
+4447,Jab,Jab
 4448,No Strike,Jab
 4449,No Strike,Jab
-4450,No Strike,Jab
+4450,Jab,Jab
 4451,No Strike,Jab
 4452,No Strike,Jab
 4453,No Strike,Jab
 4454,No Strike,Jab
 4455,No Strike,Jab
 4456,No Strike,Jab
-4457,No Strike,Jab
+4457,Body Kick,Jab
 4458,No Strike,No Strike
 4459,No Strike,No Strike
 4460,No Strike,No Strike
@@ -4954,7 +4954,7 @@ Frame Number,Predicted Strike,Actual Strike
 4952,No Strike,No Strike
 4953,No Strike,No Strike
 4954,No Strike,No Strike
-4955,No Strike,No Strike
+4955,High Kick,No Strike
 4956,No Strike,No Strike
 4957,No Strike,No Strike
 4958,No Strike,No Strike
@@ -5028,9 +5028,9 @@ Frame Number,Predicted Strike,Actual Strike
 5026,No Strike,No Strike
 5027,No Strike,No Strike
 5028,No Strike,High Kick
-5029,No Strike,High Kick
+5029,High Kick,High Kick
 5030,No Strike,High Kick
-5031,No Strike,High Kick
+5031,High Kick,High Kick
 5032,No Strike,High Kick
 5033,No Strike,High Kick
 5034,No Strike,High Kick
@@ -8705,7 +8705,7 @@ Frame Number,Predicted Strike,Actual Strike
 8703,No Strike,No Strike
 8704,No Strike,No Strike
 8705,No Strike,No Strike
-8706,No Strike,Cross
+8706,Cross,Cross
 8707,No Strike,Cross
 8708,No Strike,Cross
 8709,No Strike,Cross
@@ -9595,7 +9595,7 @@ Frame Number,Predicted Strike,Actual Strike
 9593,No Strike,No Strike
 9594,No Strike,Cross
 9595,No Strike,Cross
-9596,No Strike,Cross
+9596,Cross,Cross
 9597,No Strike,Cross
 9598,No Strike,Cross
 9599,No Strike,Cross
@@ -10009,8 +10009,8 @@ Frame Number,Predicted Strike,Actual Strike
 10007,No Strike,Body Kick
 10008,No Strike,Body Kick
 10009,No Strike,Body Kick
-10010,No Strike,Body Kick
-10011,No Strike,Body Kick
+10010,Body Kick,Body Kick
+10011,Body Kick,Body Kick
 10012,No Strike,Body Kick
 10013,No Strike,Body Kick
 10014,No Strike,No Strike
@@ -10380,7 +10380,7 @@ Frame Number,Predicted Strike,Actual Strike
 10378,No Strike,No Strike
 10379,No Strike,No Strike
 10380,No Strike,Jab
-10381,No Strike,Jab
+10381,Jab,Jab
 10382,No Strike,Jab
 10383,No Strike,Jab
 10384,No Strike,Jab
@@ -10389,7 +10389,7 @@ Frame Number,Predicted Strike,Actual Strike
 10387,No Strike,Jab
 10388,No Strike,Jab
 10389,No Strike,Jab
-10390,No Strike,Jab
+10390,Jab,Jab
 10391,No Strike,Jab
 10392,No Strike,No Strike
 10393,No Strike,No Strike
@@ -10426,7 +10426,7 @@ Frame Number,Predicted Strike,Actual Strike
 10424,No Strike,Cross
 10425,No Strike,Cross
 10426,No Strike,Cross
-10427,No Strike,Cross
+10427,Cross,Cross
 10428,No Strike,No Strike
 10429,No Strike,No Strike
 10430,No Strike,No Strike
@@ -12115,7 +12115,7 @@ Frame Number,Predicted Strike,Actual Strike
 12113,No Strike,Leg Kick
 12114,No Strike,Leg Kick
 12115,No Strike,Leg Kick
-12116,No Strike,Leg Kick
+12116,Leg Kick,Leg Kick
 12117,No Strike,Leg Kick
 12118,No Strike,Leg Kick
 12119,No Strike,Leg Kick
@@ -12816,12 +12816,12 @@ Frame Number,Predicted Strike,Actual Strike
 12814,No Strike,No Strike
 12815,No Strike,No Strike
 12816,No Strike,High Kick
-12817,No Strike,High Kick
+12817,High Kick,High Kick
 12818,No Strike,High Kick
 12819,No Strike,High Kick
 12820,No Strike,High Kick
 12821,No Strike,High Kick
-12822,No Strike,High Kick
+12822,High Kick,High Kick
 12823,No Strike,High Kick
 12824,No Strike,High Kick
 12825,No Strike,High Kick
@@ -12905,13 +12905,13 @@ Frame Number,Predicted Strike,Actual Strike
 12903,No Strike,No Strike
 12904,No Strike,No Strike
 12905,No Strike,No Strike
-12906,No Strike,Leg Kick
+12906,Leg Kick,Leg Kick
 12907,No Strike,Leg Kick
 12908,No Strike,Leg Kick
 12909,No Strike,Leg Kick
 12910,No Strike,Leg Kick
 12911,No Strike,Leg Kick
-12912,No Strike,Leg Kick
+12912,Leg Kick,Leg Kick
 12913,No Strike,Leg Kick
 12914,No Strike,Leg Kick
 12915,No Strike,Leg Kick
@@ -15108,7 +15108,7 @@ Frame Number,Predicted Strike,Actual Strike
 15106,No Strike,No Strike
 15107,No Strike,No Strike
 15108,No Strike,No Strike
-15109,No Strike,No Strike
+15109,Cross,No Strike
 15110,No Strike,No Strike
 15111,No Strike,No Strike
 15112,No Strike,No Strike
@@ -15119,13 +15119,13 @@ Frame Number,Predicted Strike,Actual Strike
 15117,No Strike,No Strike
 15118,No Strike,No Strike
 15119,No Strike,No Strike
-15120,No Strike,Cross
+15120,Cross,Cross
 15121,No Strike,Cross
 15122,No Strike,Cross
 15123,No Strike,Cross
 15124,No Strike,Cross
 15125,No Strike,Cross
-15126,No Strike,Cross
+15126,Cross,Cross
 15127,No Strike,Cross
 15128,No Strike,Cross
 15129,No Strike,Cross
@@ -15221,7 +15221,7 @@ Frame Number,Predicted Strike,Actual Strike
 15219,No Strike,No Strike
 15220,No Strike,No Strike
 15221,No Strike,No Strike
-15222,No Strike,Leg Kick
+15222,Leg Kick,Leg Kick
 15223,No Strike,Leg Kick
 15224,No Strike,Leg Kick
 15225,No Strike,Leg Kick
@@ -16938,7 +16938,7 @@ Frame Number,Predicted Strike,Actual Strike
 16936,No Strike,Body Kick
 16937,No Strike,Body Kick
 16938,No Strike,Body Kick
-16939,No Strike,Body Kick
+16939,Body Kick,Body Kick
 16940,No Strike,Body Kick
 16941,No Strike,Body Kick
 16942,No Strike,Body Kick
@@ -17646,16 +17646,16 @@ Frame Number,Predicted Strike,Actual Strike
 17644,No Strike,No Strike
 17645,No Strike,No Strike
 17646,No Strike,High Kick
-17647,No Strike,High Kick
+17647,High Kick,High Kick
 17648,No Strike,High Kick
 17649,No Strike,High Kick
-17650,No Strike,High Kick
+17650,High Kick,High Kick
 17651,No Strike,High Kick
-17652,No Strike,High Kick
+17652,High Kick,High Kick
 17653,No Strike,High Kick
 17654,No Strike,High Kick
 17655,No Strike,High Kick
-17656,No Strike,High Kick
+17656,High Kick,High Kick
 17657,No Strike,High Kick
 17658,No Strike,No Strike
 17659,No Strike,No Strike
@@ -17825,13 +17825,13 @@ Frame Number,Predicted Strike,Actual Strike
 17823,No Strike,No Strike
 17824,No Strike,No Strike
 17825,No Strike,No Strike
-17826,No Strike,Body Kick
+17826,Body Kick,Body Kick
 17827,No Strike,Body Kick
 17828,No Strike,Body Kick
 17829,No Strike,Body Kick
 17830,No Strike,Body Kick
 17831,No Strike,Body Kick
-17832,No Strike,Body Kick
+17832,Body Kick,Body Kick
 17833,No Strike,Body Kick
 17834,No Strike,Body Kick
 17835,No Strike,Body Kick
@@ -18060,17 +18060,17 @@ Frame Number,Predicted Strike,Actual Strike
 18058,No Strike,No Strike
 18059,No Strike,No Strike
 18060,No Strike,Jab
-18061,No Strike,Jab
-18062,No Strike,Jab
+18061,Jab,Jab
+18062,Jab,Jab
 18063,No Strike,Jab
 18064,No Strike,Jab
-18065,No Strike,Jab
+18065,Jab,Jab
 18066,No Strike,Jab
-18067,No Strike,Jab
+18067,Jab,Jab
 18068,No Strike,Jab
 18069,No Strike,Jab
 18070,No Strike,Jab
-18071,No Strike,Jab
+18071,Jab,Jab
 18072,No Strike,No Strike
 18073,No Strike,No Strike
 18074,No Strike,No Strike
@@ -18492,7 +18492,7 @@ Frame Number,Predicted Strike,Actual Strike
 18490,No Strike,No Strike
 18491,No Strike,No Strike
 18492,No Strike,No Strike
-18493,No Strike,No Strike
+18493,Jab,No Strike
 18494,No Strike,No Strike
 18495,No Strike,No Strike
 18496,No Strike,No Strike
@@ -20663,7 +20663,7 @@ Frame Number,Predicted Strike,Actual Strike
 20661,No Strike,No Strike
 20662,No Strike,No Strike
 20663,No Strike,No Strike
-20664,No Strike,High Kick
+20664,High Kick,High Kick
 20665,No Strike,High Kick
 20666,No Strike,High Kick
 20667,No Strike,High Kick
