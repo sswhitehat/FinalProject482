@@ -1,6 +1,5 @@
 numpy
 pandas
-matplotlib
-scikit-learn
-tensorflow
-keras
+torch
+sklearn
+opencv-python
