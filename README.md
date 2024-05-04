@@ -125,28 +125,28 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+This project requires Python and several Python libraries. Before you begin, ensure you have Python installed on your system. If not, you can download it from python.org.
+You will also need to install the required Python libraries which are listed in the requirements.txt file after cloning the repository.
 * npm
   ```sh
-  npm install npm@latest -g
+  pip install -r requirements.txt
   ```
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+Follow these instructions to get your development environment running:
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/sswhitehat/StrikeMetrics---FinalProjectCS482.git
    ```
-3. Install NPM packages
+2. Navigate to the project directory:
    ```sh
-   npm install
+   cd StrikeMetrics---FinalProjectCS482
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+3. Download Required Libraries
+   ```sh
+   pip install -r requirements.txt
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
