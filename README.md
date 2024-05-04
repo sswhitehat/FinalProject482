@@ -110,7 +110,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
-* [![MoveNet]MoveNet.js]][MoveNet-url]
+* [![MoveNet][MoveNet.js]][MoveNet-url]
 * [![PyTorch][PyTorch.js]][PyTorch-url]
 * [![Next][Next.js]][Next-url]
 * [![React][React.js]][React-url]
@@ -251,9 +251,9 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
 [MoveNet.js]: https://img.shields.io/badge/MoveNet.js-000000?style=for-the-badge&logo=movenet&logoColor=white
-[MoveNet.url]: https://blog.tensorflow.org/
+[MoveNet-url]: https://blog.tensorflow.org/
 [PyTorch.js]: https://img.shields.io/badge/PyTorch.js-000000?style=for-the-badge&logo=pytorch&logoColor=white
-[PyTorch.url]: https://pytorch.org/
+[PyTorch-url]: https://pytorch.org/
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
