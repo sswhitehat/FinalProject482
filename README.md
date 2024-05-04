@@ -34,10 +34,10 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">StrikeMetrics</h3>
 
   <p align="center">
-    project_description
+    StrikeMetrics is a prototype tool for combat sport analysis that utilizes elements of Computer Vision and Machine Learning. 
     <br />
     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
     <br />
@@ -248,6 +248,10 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
+[MoveNet.js]: https://img.shields.io/badge/MoveNet.js-000000?style=for-the-badge&logo=movenet&logoColor=white
+[MoveNet.url]: https://blog.tensorflow.org/
+[PyTorch.js]: https://img.shields.io/badge/PyTorch.js-000000?style=for-the-badge&logo=pytorch&logoColor=white
+[PyTorch.url]: https://pytorch.org/
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
