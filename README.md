@@ -52,6 +52,23 @@
 
 
 
+<!-- VIDEO AND GIF SECTION -->
+## Videos and Demonstrations
+
+Here are some videos and GIFs that demonstrate the project:
+
+### YouTube Videos
+1. [![Video One](http://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://youtu.be/0cK-5Odirgo)
+2. [![Video Two](http://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://youtu.be/0yUIstA3iCI)
+3. [![Video Three](http://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://youtu.be/g-tiUbL8vpw)
+
+### GIF Demonstrations
+![GIF One](path_to_gif_one.gif)
+![GIF Two](path_to_gif_two.gif)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
