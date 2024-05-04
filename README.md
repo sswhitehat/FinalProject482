@@ -125,7 +125,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This project requires Python and several Python libraries. Before you begin, ensure you have Python installed on your system. If not, you can download it from python.org.
+This project requires Python and several Python libraries. Before you begin, ensure you have Python installed on your system. If not, you can download it from [python] 3.8+ recommend.
 You will also need to install the required Python libraries which are listed in the requirements.txt file after cloning the repository.
 * npm
   ```sh
@@ -239,6 +239,7 @@ Use this space to list resources you find helpful and would like to give credit 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[python]: https://www.python.org/
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
