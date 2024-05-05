@@ -18,6 +18,9 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
+
+<div align="center">
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -25,11 +28,8 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-
-
 <!-- PROJECT LOGO -->
 <br />
-<div align="center">
   <a href="https://github.com/github_username/repo_name">
     <img src="Images/logo.png" alt="Logo" width="240" height="240">
   </a>
@@ -39,18 +39,16 @@
   <p align="center">
     StrikeMetrics is a prototype tool for combat sport analysis that utilizes elements of Computer Vision and Machine Learning. 
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/sswhitehat/StrikeMetrics---FinalProjectCS482"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://github.com/sswhitehat/StrikeMetrics---FinalProjectCS482">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/sswhitehat/StrikeMetrics---FinalProjectCS482/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/sswhitehat/StrikeMetrics---FinalProjectCS482/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
-
-
 
 <!-- VIDEO AND GIF SECTION -->
 ## Videos and Demonstrations
@@ -101,18 +99,10 @@ Here are some videos and GIFs that demonstrate the project:
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
-
-<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
-
-
 
 ### Built With
 
@@ -131,22 +121,14 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 <p align="right">(<a href="#readme-top">Back to Top</a>)</p>
 
-
-
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To set up a local copy of the project, follow these simple example steps.
 
 ### Prerequisites
 
-This project requires Python and several Python libraries. Before you begin, ensure you have Python installed on your system. If not, you can download it from [python] 3.8+ recommend.
-You will also need to install the required Python libraries which are listed in the requirements.txt file after cloning the repository.
-* npm
-  ```sh
-  pip install -r requirements.txt
-  ```
+This project requires Python and several Python libraries. Before you begin, ensure you have Python installed on your system. If not, you can download it from [Python](https://www.python.org/downloads/) (Version 3.8+ is recommended). You will also need to install the required Python libraries which are listed in the requirements.txt file after cloning the repository.
 
 ### Installation
 
@@ -176,10 +158,6 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
-<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
-
-
-
 <!-- ROADMAP -->
 ## Roadmap
 
@@ -188,10 +166,9 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Feature 3
     - [ ] Nested Feature
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/sswhitehat/StrikeMetrics---FinalProjectCS482/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">Back to Top</a>)</p>
-
 
 
 <!-- CONTRIBUTING -->
@@ -210,27 +187,17 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">Back to Top</a>)</p>
 
-
-
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
-
-
 
 <!-- CONTACT -->
 ## Contact
 
 Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
-
-<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
-
-
+Project Link: [https://github.com/sswhitehat/StrikeMetrics---FinalProjectCS482](https://github.com/sswhitehat/StrikeMetrics---FinalProjectCS482)
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
@@ -240,8 +207,6 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 * []()
 
 <p align="right">(<a href="#readme-top">Back to Top</a>)</p>
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
