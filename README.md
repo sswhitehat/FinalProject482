@@ -57,21 +57,22 @@
 
 Here are some videos and GIFs that demonstrate the project:
 
-### YouTube Videos
-
 <div align="center">
-  
-[![Video_One](https://img.youtube.com/vi/PHk928ncIkg/0.jpg)](https://www.youtube.com/watch?v=0cK-5Odirgo)
-[![Video Two](http://img.youtube.com/vi/BtxTB55BXr4/0.jpg)](https://www.youtube.com/watch?v=0yUIstA3iCI)
-[![Video Three](http://img.youtube.com/vi/iCUb43KZ0d4/0.jpg)](https://www.youtube.com/watch?v=g-tiUbL8vpw)
 
-</div>
+### YouTube Videos
+  
+  [![Video_One](https://img.youtube.com/vi/PHk928ncIkg/0.jpg)](https://www.youtube.com/watch?v=0cK-5Odirgo)
+  [![Video Two](http://img.youtube.com/vi/BtxTB55BXr4/0.jpg)](https://www.youtube.com/watch?v=0yUIstA3iCI)
+  [![Video Three](http://img.youtube.com/vi/iCUb43KZ0d4/0.jpg)](https://www.youtube.com/watch?v=g-tiUbL8vpw)
 
 ### GIF Demonstrations
-![GIF One](path_to_gif_one.gif)
-![GIF Two](path_to_gif_two.gif)
+  
+  ![GIF One](Images/gif_one.gif)
+  ![GIF Two](Images/gif_two.gif)
+  
+</div>
 
-<p align="center">(<a href="#readme-top">Back to Top</a>)</p>
+<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
 
 
 <!-- TABLE OF CONTENTS -->
@@ -109,7 +110,7 @@ Here are some videos and GIFs that demonstrate the project:
 
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
 
 
 
@@ -117,6 +118,8 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 * [![MoveNet][MoveNet.js]][MoveNet-url]
 * [![PyTorch][PyTorch.js]][PyTorch-url]
+* [![NumPy][NumPy.js]][NumPy-url]
+* [![OpenCV][OpenCV.js]][OpenCV-url]
 * [![Next][Next.js]][Next-url]
 * [![React][React.js]][React-url]
 * [![Vue][Vue.js]][Vue-url]
@@ -126,7 +129,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
 
 
 
@@ -162,7 +165,7 @@ Follow these instructions to get your development environment running:
    pip install -r requirements.txt
    ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
 
 
 
@@ -173,7 +176,7 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
 
 
 
@@ -187,7 +190,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
 
 
 
@@ -205,7 +208,7 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
 
 
 
@@ -214,7 +217,7 @@ Don't forget to give the project a star! Thanks again!
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
 
 
 
@@ -225,7 +228,7 @@ Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_
 
 Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
 
 
 
@@ -236,29 +239,34 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 * []()
 * []()
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo_name/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/sswhitehat/StrikeMetrics---FinalProjectCS482.svg?style=for-the-badge
+[contributors-url]: https://github.com/sswhitehat/StrikeMetrics---FinalProjectCS482/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/sswhitehat/StrikeMetrics---FinalProjectCS482.svg?style=for-the-badge
+[forks-url]: https://github.com/sswhitehat/StrikeMetrics---FinalProjectCS482/network/members
+[stars-shield]: https://img.shields.io/github/stars/sswhitehat/StrikeMetrics---FinalProjectCS482.svg?style=for-the-badge
+[stars-url]: https://github.com/sswhitehat/StrikeMetrics---FinalProjectCS482/stargazers
+[issues-shield]: https://img.shields.io/github/issues/sswhitehat/StrikeMetrics---FinalProjectCS482.svg?style=for-the-badge
+[issues-url]: https://github.com/sswhitehat/StrikeMetrics---FinalProjectCS482/issues
+[license-shield]: https://img.shields.io/github/license/sswhitehat/StrikeMetrics---FinalProjectCS482.svg?style=for-the-badge
+[license-url]: https://github.com/sswhitehat/StrikeMetrics---FinalProjectCS482/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
+[backtotop-shield]: https://img.shields.io/badge/Back_to_Top-373B3B?style=for-the-badge
 [product-screenshot]: images/screenshot.png
-[MoveNet.js]: https://img.shields.io/badge/MoveNet.js-000000?style=for-the-badge&logo=movenet&logoColor=FCB03F
+[MoveNet.js]: https://img.shields.io/badge/MoveNet-FFDDB3?style=for-the-badge&logo=tensorflow&logoColor=FC6A3F
 [MoveNet-url]: https://blog.tensorflow.org/2021/05/next-generation-pose-detection-with-movenet-and-tensorflowjs.html
-[PyTorch.js]: https://img.shields.io/badge/PyTorch.js-000000?style=for-the-badge&logo=pytorch&logoColor=FC543F
+[PyTorch.js]: https://img.shields.io/badge/PyTorch-66736C?style=for-the-badge&logo=pytorch&logoColor=FC6A3F
 [PyTorch-url]: https://pytorch.org/
+[NumPy.js]: https://img.shields.io/badge/NumPy-5581E0?style=for-the-badge&logo=numpy&logoColor=9DD4FF
+[NumPy-url]: https://numpy.org/
+[OpenCV.js]: https://img.shields.io/badge/OpenCV-FFFDFC?style=for-the-badge&logo=opencv&logoColor=FF3E00
+[OpenCV-url]: https://opencv.org/
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
