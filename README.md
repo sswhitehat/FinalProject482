@@ -99,7 +99,7 @@ Here are some videos and GIFs that demonstrate the project:
 </details>
 
 ## Introduction
-Many sports, like football, swimming etc, utilize computer vision approaches to enhance the appeal of the sport and make life easier for referees and officials. However, currently, in boxing, a referee has to manually count the punches and kicks (for kickboxing) to calculate the final score for the match. My group wanted to see if there is a way to automate the process by using a computer vision approach. 
+Many sports, like football, swimming etc, utilize computer vision approaches to enhance the appeal of the sport and make life easier for referees and officials. However, currently, in boxing, a on-ground indivudal has to manually count the punches and kicks (for kickboxing) to calculate the final stats for the match. My group wanted to see if there is a way to automate the process by using a computer vision approach. 
 
 ### Related Work
 There is an existing program which already does something similiar: [Jabbr](https://jabbr.ai/) which is exclusively used for boxing.
