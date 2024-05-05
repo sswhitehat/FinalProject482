@@ -99,6 +99,23 @@ Here are some videos and GIFs that demonstrate the project:
   </ol>
 </details>
 
+## Problem
+Many sports, like football, swimming etc, utilize computer vision approaches to enhance the appeal of the sport and make life easier for referees and officials. However, currently, in boxing, a referee has to manually count the punches and kicks (for kickboxing) to calculate the final score for the match. My group wanted to see if there is a way to automate the process by using a computer vision approach. 
+
+Our initial plan was to create an application that would be able to detect the different kinds of punches and kicks thrown in a kickboxing match. The plan was to be able to detect different kinds of punches, like jabs, hooks, crosses and upper-cuts, and different kinds of kick, like leg, body and high kicks. We could then use this data to tally up the final score of the match. However, we encountered many challenges along the way.
+
+Our approach was to use a nueral network model to predict punches and kicks. First, we collected a few different videos that would make up our training data. Next, we did two steps of pre-processing on the videos. First, we ran the MoveNet algorithm on the video to determine the fighters' keypoints which we would use as the input for our nueral network. Secondly, we annotated the frames with the correct punch type, ie. jab, hook, high kick, etc. We used CVAT to simplify this process. After collecting the pre-processed data, we constructed a LSTM model using the keypoints as our input and the annotated labels as the output. Next, we trained the model on our five different videos as our training dataset. Finally, we ran the model on a couple of different videos to test the accuracy.
+
+Challenges that we faced:
+
+* Different people annotated the video, so there could be different interpretations of what is a jab vs a hook, especially since some of the group members aren't the most experienced in boxing.
+* Different videos had slight difference in camera angles which affected how MoveNet detected keypoints.
+* Camera would pan around player at times causing one player to be behind another making it harder for MoveNet to detect both players.
+* Running MoveNet on videos took a long time.
+* Annotating the training data would take extensive manual labor.
+
+## Challenges
+
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
