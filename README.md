@@ -99,22 +99,80 @@ Here are some videos and GIFs that demonstrate the project:
   </ol>
 </details>
 
-## Problem
+## Introduction
 Many sports, like football, swimming etc, utilize computer vision approaches to enhance the appeal of the sport and make life easier for referees and officials. However, currently, in boxing, a referee has to manually count the punches and kicks (for kickboxing) to calculate the final score for the match. My group wanted to see if there is a way to automate the process by using a computer vision approach. 
+
+### Related Work
+There is an existing program which already does this: TODO: SEAN enter link to other site
+
+Papers that guided our work:
+Cao, Z., Simon, T., Wei, S. E., & Sheikh, Y. (2017). Realtime multi-person 2d pose estimation using part affinity fields. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 7291-7299).
+
+Thomas, G., Gade, R., Moeslund, T. B., Carr, P., & Hilton, A. (2017). Computer vision for sports: Current applications and research topics. Computer Vision and Image Understanding, 159, 3-18
+
+Sudhakaran, S., & Lanz, O. (2017, August). Learning to detect violent videos using convolutional long short-term memory. In 2017 14th IEEE international conference on advanced video and signal based surveillance (AVSS) (pp. 1-6). IEEE.
+
+Shou, Z., Wang, D., & Chang, S. F. (2016). Temporal action localization in untrimmed videos via multi-stage cnns. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 1049-1058)
+
+Kasiri, S., Fookes, C., Sridharan, S., & Morgan, S. (2017). Fine-grained action recognition of boxing punches from depth imagery. Computer Vision and Image Understanding, 159, 143-153.
+
+## Metric Definition
+
+The metric we will be using is the number of punches correctly being detected. At first, we wanted our application to be able to detect difference between punch type, like a jab vs a hook. However, since differentiating between them is hard for the application, we decided that our metric will just be the number of punches (any kind) and number of kick (any kind) that it accurately predicted.
+
+$$
+\text{accuracy} = \frac{\text{number of correct guesses}}{\text{total punches/kicks}}
+$$
+
+## Implementation
+
+### Data collection
+
+For our project, we needed to collect a few datasets which we would be training our model on. We used multiple videos of kickboxing for our training data. Some of the considerations that went into picking our data was that we didn't want a ring because that had a tendency of interfering with the algorithm and we didn't want any fights that were too fast-paced which would make it harder for the model to learn from.
+
+### Data pre-processing
+
+We performed two steps of pre-processing on the training data. First, we ran the MoveNet algorithm on the video to determine the fighters' keypoints which we would use as the input for our nueral network. Secondly, we annotated the frames with the correct punch type, ie. jab, hook, high kick, etc. We used CVAT to simplify this process.
+
+The process of prep-processing was by far the most time consuming process. Running MoveNet on the training data would take hours for only few minutes of video. Thankfully, MoveNet could run independently without any manual intervention. However, annotating the training data was a manual process, where we would step through each frame and determine if there is a punch or kick at this frame.
+
+### Building the nueral network
+
+Sean can you fill this in. I'm not exactly sure what the thought process was. Maybe add what layers we have and why.
+
+### Training the nueral network
+
+Training the nueral network was relatively simple after we had pre-processed the training data and built the nueral network. All we had to do was to feed the training data into the model and let it work it's magic.
+
+### Running the nueral network on test data
+
+Finally, the last step in the process is to run the trained nueral network on a completely new test set and see how it performs.
+
+### Adding punches/kicks to original video
+
+For a little bit of polish, our group decided to take the predicted results from the model and add it to the original video, so it is easy to see how well our model is performing.
+
+## Results
+
+We ran the model on a few different test sets to determine how well it performed according to the metric defined earlier. 
+
+The first set we ran the model on was part of the training set (https://www.youtube.com/watch?v=0cK-5Odirgo) and had a good accuracy of Sean I don't have the accuracy can you please fill in for below as well
+
+The second set we ran the model on was a normal kickboxing fight (https://www.youtube.com/watch?v=0yUIstA3iCI) and we got an accuracy of 
+
+The final set we ran the model on was a muay thai fight (https://www.youtube.com/watch?v=g-tiUbL8vpw). Muay thai is similar to kickboxing in many regards but there is subtle differences. The accuracy on this video was 
+
+## Reflection
 
 Our initial plan was to create an application that would be able to detect the different kinds of punches and kicks thrown in a kickboxing match. The plan was to be able to detect different kinds of punches, like jabs, hooks, crosses and upper-cuts, and different kinds of kick, like leg, body and high kicks. We could then use this data to tally up the final score of the match. However, we encountered many challenges along the way.
 
-Our approach was to use a nueral network model to predict punches and kicks. First, we collected a few different videos that would make up our training data. Next, we did two steps of pre-processing on the videos. First, we ran the MoveNet algorithm on the video to determine the fighters' keypoints which we would use as the input for our nueral network. Secondly, we annotated the frames with the correct punch type, ie. jab, hook, high kick, etc. We used CVAT to simplify this process. After collecting the pre-processed data, we constructed a LSTM model using the keypoints as our input and the annotated labels as the output. Next, we trained the model on our five different videos as our training dataset. Finally, we ran the model on a couple of different videos to test the accuracy.
+Main Challenges:
 
-Challenges that we faced:
+* Different interpretations of training data
+* Training video inconsistencies
+* Time consuming processes
 
-* Different people annotated the video, so there could be different interpretations of what is a jab vs a hook, especially since some of the group members aren't the most experienced in boxing.
-* Different videos had slight difference in camera angles which affected how MoveNet detected keypoints.
-* Camera would pan around player at times causing one player to be behind another making it harder for MoveNet to detect both players.
-* Running MoveNet on videos took a long time.
-* Annotating the training data would take extensive manual labor.
-
-## Challenges
+Considering the challenges we faced, as a group we feel like we did relatively well on a pretty complicated project in the time that we had.
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
