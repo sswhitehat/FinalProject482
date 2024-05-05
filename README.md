@@ -99,10 +99,10 @@ Here are some videos and GIFs that demonstrate the project:
 </details>
 
 ## Introduction
-Many sports, like football, swimming etc, utilize computer vision approaches to enhance the appeal of the sport and make life easier for referees and officials. However, currently, in boxing, a on-ground indivudal has to manually count the punches and kicks (for kickboxing) to calculate the final stats for the match. My group wanted to see if there is a way to automate the process by using a computer vision approach. 
+Many sports, like football, swimming etc, utilize computer vision approaches to enhance the appeal of the sport and make life easier for referees and officials. However, in boxing, manual counting is required to calculate the total number of punches and kicks (for kickboxing) for each match. Our group wanted to see if there is a way to automate the process by using a computer vision approach. 
 
 ### Related Work
-There is an existing program which already does something similiar: [Jabbr](https://jabbr.ai/) which is exclusively used for boxing.
+There is an existing program which already does something similiar: [Jabbr](https://jabbr.ai/), which is exclusively used for boxing.
 
 Papers that guided our work:
 Cao, Z., Simon, T., Wei, S. E., & Sheikh, Y. (2017). Realtime multi-person 2d pose estimation using part affinity fields. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 7291-7299).
@@ -117,7 +117,7 @@ Kasiri, S., Fookes, C., Sridharan, S., & Morgan, S. (2017). Fine-grained action 
 
 ## Metric Definition
 
-The metric we will be using is the number of punches correctly being detected. At first, we wanted our application to be able to detect difference between punch type, like a jab vs a hook. However, since differentiating between them is hard for the application, we decided that our metric will just be the number of punches (any kind) and number of kick (any kind) that it accurately predicted.
+The metric we will be using is the number of punches correctly being detected. At first, we wanted our application to be able to distinguish different types of punches, like a jab vs a hook. However, since differentiating between them is hard for the application, we decided that our metric will just be the number of punches (any kind) and number of kick (any kind) that it accurately predicted.
 
 $$
 \text{accuracy} = \frac{\text{number of correct guesses}}{\text{total punches/kicks}}
@@ -127,13 +127,13 @@ $$
 
 ### Data collection
 
-For our project, we needed to collect a few datasets which we would be training our model on. We used multiple videos from(Glory and One Championship) of kickboxing for our training data. Some of the considerations that went into picking our data was that we didn't want a ring because that had a tendency of interfering with the algorithm and we didn't want any fights that were too fast-paced which would make it harder for the model to learn from.
+For our project, we needed to collect a few datasets which we would be training our model on. We used multiple videos from([Glory](https://glorykickboxing.com/) and [One Championship](https://www.onefc.com/)) of kickboxing for our training data. Some of the considerations that went into picking our data was that we didn't want a ring because that had a tendency of interfering with the algorithm and we didn't want any fights that were too fast-paced which would make it harder for the model to learn from.
 
 ### Data pre-processing
 
-We performed two steps of pre-processing on the training data. First, we ran the MoveNet algorithm on the video to determine the fighters' keypoints which we would use as the input for our neural network. Secondly, we annotated the frames with the correct punch type, ie. jab, hook, high kick, etc. We used CVAT to simplify this process.
+We performed two steps of pre-processing on the training data. First, we ran the MoveNet algorithm on the video to determine the fighters' keypoints which we would use as the input for our neural network. Second, we annotated the frames with the correct punch type, ie. jab, hook, high kick, etc. We used CVAT to simplify this process.
 
-The process of prep-processing was by far the most time consuming process. Running MoveNet on the training data would take hours for only few minutes of video. Thankfully, MoveNet could run independently without any manual intervention. However, annotating the training data was a manual process, where we would step through each frame and determine if there is a punch or kick at this frame.
+The process of pre-processing was by far the most time consuming process. Running MoveNet on the training data would take hours for only few minutes of video. Thankfully, MoveNet could run independently without any manual intervention. However, annotating the training data was a manual process, where we would step through each frame and determine if there is a punch or kick.
 
 ### Building the neural network
 
@@ -196,9 +196,9 @@ Output: The model outputs the logits for each class, which can be passed through
 
 ### Training the neural network
 
-Training the neural network was relatively simple after we had pre-processed the training data and built the neural network. All we had to do was to feed the training data into the model and let it work it's magic including the steps below.
+Training the neural network was relatively simple after we had pre-processed the training data and built the neural network. All we had to do was feed the training data into the model and let it work it's magic including the steps below.
 
-Data Loading and Preprocessing: Before training, we load the keypoint data from our Movnet CSV files and parse annotations from corresponding XML files. We also preprocess the data by normalizing the keypoints using a StandardScaler. This normalization is crucial as it ensures that the model is not biased towards features with inherently larger scales such as the category('No Strike').
+Data Loading and Pre-Processing: Before training, we load the keypoint data from our MoveNet CSV files and parse annotations from corresponding XML files. We also pre-process the data by normalizing the keypoints using a StandardScaler. This normalization is crucial as it ensures that the model is not biased towards features with inherently larger scales such as the category('No Strike').
 
 Cross-Validation Setup: We employed K-fold cross-validation to ensure that our model generalizes well over different subsets of data. This method splits the dataset into k_folds sets which in our case is 5, using one fold for validation and the rest for training in each iteration. It helps in understanding the model's performance variations across different data splits.
 
@@ -226,24 +226,24 @@ The first set we ran the model on was part of the training set (https://www.yout
 
 The second set we ran the model on was a normal kickboxing fight (https://www.youtube.com/watch?v=0yUIstA3iCI) and we got an accuracy of 50.00% excluding 'No Strike'
 
-The final set we ran the model on was a muay thai fight (https://www.youtube.com/watch?v=g-tiUbL8vpw). Muay thai is similar to kickboxing in many regards but there is subtle differences. The accuracy on this video was 12.50% excluding 'No Strike'
+The final set we ran the model on was a muay thai fight (https://www.youtube.com/watch?v=g-tiUbL8vpw). Muay thai is similar to kickboxing in many regards but there are subtle differences. The accuracy on this video was 12.50% excluding 'No Strike'
 
 ## Reflection
 
-Our initial plan was to create an application that would be able to detect the different kinds of punches and kicks thrown in a kickboxing match. The plan was to be able to detect different kinds of punches, like jabs, hooks, crosses and upper-cuts, and different kinds of kick, like leg, body and high kicks. We could then use this data to tally up the final score of the match. However, we encountered many challenges along the way.
+Our initial plan was to create an application that would be able to detect the different kinds of punches and kicks thrown in a kickboxing match, like jabs, hooks, crosses and upper-cuts, and different kinds of kicks, like leg, body and high kicks. We could then use this data to tally up the final score of the match. However, we encountered many challenges along the way.
 
 Main Challenges:
 
 * Different interpretations of training data - Strikes landing at the same time, Strikes hitting shoulders and arms.
-* Training video inconsistencies - Camera angle changes, Ring ropes stopping ideal Movenet Output.
-* Time consuming processes - On our current devices, processes like Movenet take ~10 hours per fight to run.
+* Training video inconsistencies - Camera angle changes, Ring ropes stopping ideal MoveNet Output.
+* Time consuming processes - On our current devices, processes like MoveNet take ~10 hours per fight to run.
 
 Considering the challenges we faced, as a group we feel like we did relatively well on a pretty complicated project in the time that we had.
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-CS482 - Final Project - This project will contiune past the course.
+CS482 - Final Project - This project will continue past the course.
 
 ### Built With
 
@@ -329,7 +329,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Sean Sippel - ssippel@gmu.edu
 Chris Mostert - jmostert@gmu.edu
-Joesph Cherinet - jcherine@gmu.edu
+Joseph Cherinet - jcherine@gmu.edu
 
 Project Link: [https://github.com/sswhitehat/StrikeMetrics---FinalProjectCS482](https://github.com/sswhitehat/StrikeMetrics---FinalProjectCS482)
 
@@ -350,7 +350,6 @@ Project Link: [https://github.com/sswhitehat/StrikeMetrics---FinalProjectCS482](
 [license-url]: https://github.com/sswhitehat/StrikeMetrics---FinalProjectCS482/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
-[backtotop-shield]: https://img.shields.io/badge/Back_to_Top-373B3B?style=for-the-badge
 [product-screenshot]: images/screenshot.png
 [MoveNet.js]: https://img.shields.io/badge/MoveNet-FFDDB3?style=for-the-badge&logo=tensorflow&logoColor=FC6A3F
 [MoveNet-url]: https://blog.tensorflow.org/2021/05/next-generation-pose-detection-with-movenet-and-tensorflowjs.html
