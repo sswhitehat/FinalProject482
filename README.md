@@ -103,7 +103,7 @@ Here are some videos and GIFs that demonstrate the project:
 Many sports, like football, swimming etc, utilize computer vision approaches to enhance the appeal of the sport and make life easier for referees and officials. However, currently, in boxing, a referee has to manually count the punches and kicks (for kickboxing) to calculate the final score for the match. My group wanted to see if there is a way to automate the process by using a computer vision approach. 
 
 ### Related Work
-There is an existing program which already does this: TODO: SEAN enter link to other site
+There is an existing program which already does something similiar: [Jabbr](https://jabbr.ai/) which is exclusively used for boxing.
 
 Papers that guided our work:
 Cao, Z., Simon, T., Wei, S. E., & Sheikh, Y. (2017). Realtime multi-person 2d pose estimation using part affinity fields. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 7291-7299).
@@ -128,25 +128,92 @@ $$
 
 ### Data collection
 
-For our project, we needed to collect a few datasets which we would be training our model on. We used multiple videos of kickboxing for our training data. Some of the considerations that went into picking our data was that we didn't want a ring because that had a tendency of interfering with the algorithm and we didn't want any fights that were too fast-paced which would make it harder for the model to learn from.
+For our project, we needed to collect a few datasets which we would be training our model on. We used multiple videos from(Glory and One Championship) of kickboxing for our training data. Some of the considerations that went into picking our data was that we didn't want a ring because that had a tendency of interfering with the algorithm and we didn't want any fights that were too fast-paced which would make it harder for the model to learn from.
 
 ### Data pre-processing
 
-We performed two steps of pre-processing on the training data. First, we ran the MoveNet algorithm on the video to determine the fighters' keypoints which we would use as the input for our nueral network. Secondly, we annotated the frames with the correct punch type, ie. jab, hook, high kick, etc. We used CVAT to simplify this process.
+We performed two steps of pre-processing on the training data. First, we ran the MoveNet algorithm on the video to determine the fighters' keypoints which we would use as the input for our neural network. Secondly, we annotated the frames with the correct punch type, ie. jab, hook, high kick, etc. We used CVAT to simplify this process.
 
 The process of prep-processing was by far the most time consuming process. Running MoveNet on the training data would take hours for only few minutes of video. Thankfully, MoveNet could run independently without any manual intervention. However, annotating the training data was a manual process, where we would step through each frame and determine if there is a punch or kick at this frame.
 
-### Building the nueral network
+### Building the neural network
 
-Sean can you fill this in. I'm not exactly sure what the thought process was. Maybe add what layers we have and why.
+Our KickBoxingLSTM neural network is designed to capture the specific movements in kickboxing using LSTM (Long Short-Term Memory) layers. Here’s a breakdown of the architecture and rationale behind each component:
 
-### Training the nueral network
+    Input Layer: This layer receives sequences of keypoints representing positions of various body parts over time from Movenet. The input_size parameter specifies the number of features in each input vector, which should match the number of keypoints multiplied by their dimensions (x, y, z).
 
-Training the nueral network was relatively simple after we had pre-processed the training data and built the nueral network. All we had to do was to feed the training data into the model and let it work it's magic.
+    LSTM Layers: The core of this model is the LSTM layers, which are important for understanding sequences with long-range dependencies(sequences). Each LSTM layer processes the input sequence, maintains hidden states, and passes its outputs to the next layer. This architecture helps in capturing the progression of movements in kickboxing, like the transition from a blocking punches to landing a strike. The num_layers parameter allows for the stacking of multiple LSTM layers to improve the model’s grasp of sequences.
 
-### Running the nueral network on test data
+    Dropout Layer: To mitigate the risk of overfitting, a dropout layer follows each LSTM layer, except for the last one. It randomly sets input elements to zero during training at a rate specified by dropout_rate, which helps prevent the model from relying too much on any small set of neurons.
 
-Finally, the last step in the process is to run the trained nueral network on a completely new test set and see how it performs.
+    Fully Connected Layer: After the LSTM layers, a fully connected layer reduces the dimensionality from the hidden state size to the number of output classes (NUM_CLASSES = 8). This layer is crucial for mapping the learned strikes(punches/kicks) to specific class predictions, like different types of strikes.
+
+    Output: The model outputs the logits for each class, which can be passed through a softmax function to obtain probabilities. However, for training stability and efficiency, we often use the raw logits with a loss function that incorporates softmax internally, like cross-entropy which is implemented in the training.
+
+```py
+   class KickBoxingLSTM(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, dropout_rate=0.5):
+        """
+        Initialize the HybridBoxingLSTM model with given parameters.
+        Parameters:
+            input_size (int): The number of expected features in the input x
+            hidden_size (int): The number of features in the hidden state h
+            num_layers (int): Number of recurrent layers in the LSTM
+            dropout_rate (float): If non-zero, we introduce a Dropout layer on the outputs of each
+            individual LSTM layer which is the last layer, with the dropout probability equal to the dropout_rate
+        """
+        super().__init__()
+        # Define the LSTM layer with specified input size, hidden size, and number of layers
+        # `batch_first=True` indicates that the input tensors will have a shape (batch, seq, feature)
+        self.lstm = nn.LSTM(input_size, hidden_size, num_layers, batch_first=True, dropout=dropout_rate)
+        # Define a fully connected layer to map the LSTM output to the number of classes
+        self.fc = nn.Linear(hidden_size, NUM_CLASSES)
+        # Dropout layer to prevent overfitting
+        self.dropout = nn.Dropout(dropout_rate)
+
+    def forward(self, x):
+        """
+        Defines the forward pass of the model.
+        Parameters:
+            x is our Tensor: Input data tensor, expected shape (batch, seq_length, input_size)
+        Returns:
+            Tensor: Output tensor after passing through LSTM, dropout, and fully connected layer
+        """
+        # Convert input to float32
+        x = x.float()
+        # Ensure input tensor is 3D (batch, 1, input_size) if currently 2D
+        if x.dim() == 2:
+            x = x.unsqueeze(1)
+            # Initialize hidden state and cell state with zeros
+        h0 = torch.zeros(self.lstm.num_layers, x.size(0), self.lstm.hidden_size, dtype=torch.float32).to(x.device)
+        c0 = torch.zeros(self.lstm.num_layers, x.size(0), self.lstm.hidden_size, dtype=torch.float32).to(x.device)
+        # Forward pass through LSTM layer
+        out, _ = self.lstm(x, (h0, c0))
+        # Apply dropout on the outputs of the LSTM
+        out = self.dropout(out)
+        # Apply the fully connected layer on the last time step output
+        return self.fc(out[:, -1, :])
+   ```
+
+### Training the neural network
+
+Training the neural network was relatively simple after we had pre-processed the training data and built the neural network. All we had to do was to feed the training data into the model and let it work it's magic.
+
+    Data Loading and Preprocessing: Before training, we load the keypoint data from our Movnet CSV files and parse annotations from corresponding XML files. We also preprocess the data by normalizing the keypoints using a StandardScaler. This normalization is crucial as it ensures that the model is not biased towards features with inherently larger scales such as the category('No Strike').
+
+    Cross-Validation Setup: We employed K-fold cross-validation to ensure that our model generalizes well over different subsets of data. This method splits the dataset into k_folds sets which in our case is 5, using one fold for validation and the rest for training in each iteration. It helps in understanding the model's performance variations across different data splits.
+
+    Batch Processing: Data is fed into the model in batches using DataLoader. Implemented to optimize the training process with mini-batch gradient descent.
+
+    Optimization and Loss Calculation: We use the Adam optimizer for its adaptive learning rate capabilities, which help in converging faster which is esential for sequence learning. The CrossEntropyLoss function is used for calculating the loss as it's great for multi-class classification problems.
+
+    Model Evaluation and Saving: After each epoch, we evaluate the model on the validation set and save the model's state if it surpasses a predefined accuracy threshold > 90%. This step ensures that we retain the best version of the model throughout the training process.
+
+    Early Stopping: To avoid overfitting and unnecessary computations, we implemented an early stopping mechanism. If the validation loss does not improve for a specified number of epochs (patience), training is halted.
+
+### Running the neural network on test data
+
+Finally, the last step in the process is to run the trained neural network on a completely new test set and see how it performs.
 
 ### Adding punches/kicks to original video
 
@@ -156,11 +223,11 @@ For a little bit of polish, our group decided to take the predicted results from
 
 We ran the model on a few different test sets to determine how well it performed according to the metric defined earlier. 
 
-The first set we ran the model on was part of the training set (https://www.youtube.com/watch?v=0cK-5Odirgo) and had a good accuracy of Sean I don't have the accuracy can you please fill in for below as well
+The first set we ran the model on was part of the training set (https://www.youtube.com/watch?v=0cK-5Odirgo) and had a good accuracy of 98.83% excluding 'No Strike'
 
-The second set we ran the model on was a normal kickboxing fight (https://www.youtube.com/watch?v=0yUIstA3iCI) and we got an accuracy of 
+The second set we ran the model on was a normal kickboxing fight (https://www.youtube.com/watch?v=0yUIstA3iCI) and we got an accuracy of 50.00% excluding 'No Strike'
 
-The final set we ran the model on was a muay thai fight (https://www.youtube.com/watch?v=g-tiUbL8vpw). Muay thai is similar to kickboxing in many regards but there is subtle differences. The accuracy on this video was 
+The final set we ran the model on was a muay thai fight (https://www.youtube.com/watch?v=g-tiUbL8vpw). Muay thai is similar to kickboxing in many regards but there is subtle differences. The accuracy on this video was 12.50% excluding 'No Strike'
 
 ## Reflection
 
@@ -168,16 +235,16 @@ Our initial plan was to create an application that would be able to detect the d
 
 Main Challenges:
 
-* Different interpretations of training data
-* Training video inconsistencies
-* Time consuming processes
+* Different interpretations of training data - Strikes landing at the same time, Strikes hitting shoulders and arms.
+* Training video inconsistencies - Camera angle changes, Ring ropes stopping ideal Movenet Output.
+* Time consuming processes - On our current devices, processes like Movenet take ~10 hours per fight to run.
 
 Considering the challenges we faced, as a group we feel like we did relatively well on a pretty complicated project in the time that we had.
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+CS482 - Final Project - This project will contiune past the course.
 
 ### Built With
 
@@ -185,14 +252,6 @@ Considering the challenges we faced, as a group we feel like we did relatively w
 * [![PyTorch][PyTorch.js]][PyTorch-url]
 * [![NumPy][NumPy.js]][NumPy-url]
 * [![OpenCV][OpenCV.js]][OpenCV-url]
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
 
 <p align="right">(<a href="#readme-top">Back to Top</a>)</p>
 
@@ -236,10 +295,9 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [x] Training and Inital Test with 5 datasets - 5/5/2024
+- [ ] 40 datasets and more features added(Elbows, Different Kicks) - Fall 2024
+- [ ] Full 100 datasets - Aiming for 95% plus accuracy. 
 
 See the [open issues](https://github.com/sswhitehat/StrikeMetrics---FinalProjectCS482/issues) for a full list of proposed features (and known issues).
 
@@ -270,21 +328,17 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Sean Sippel - ssippel@gmu.edu
+Chris Mostert - jmostert@gmu.edu
+Joesph Cherinet - jcherine@gmu.edu
 
 Project Link: [https://github.com/sswhitehat/StrikeMetrics---FinalProjectCS482](https://github.com/sswhitehat/StrikeMetrics---FinalProjectCS482)
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* []()
-* []()
-* []()
 
 <p align="right">(<a href="#readme-top">Back to Top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[Jabbr]: https://jabbr.ai/
 [contributors-shield]: https://img.shields.io/github/contributors/sswhitehat/StrikeMetrics---FinalProjectCS482.svg?style=for-the-badge
 [contributors-url]: https://github.com/sswhitehat/StrikeMetrics---FinalProjectCS482/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/sswhitehat/StrikeMetrics---FinalProjectCS482.svg?style=for-the-badge
