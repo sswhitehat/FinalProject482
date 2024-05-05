@@ -31,10 +31,10 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="Images/logo.png" alt="Logo" width="80" height="80">
+    <img src="Images/logo.png" alt="Logo" width="240" height="240">
   </a>
 
-<h3 align="center">StrikeMetrics</h3>
+<h1 align="center">StrikeMetrics</h1>
 
   <p align="center">
     StrikeMetrics is a prototype tool for combat sport analysis that utilizes elements of Computer Vision and Machine Learning. 
@@ -58,15 +58,20 @@
 Here are some videos and GIFs that demonstrate the project:
 
 ### YouTube Videos
-1. [![Video One](http://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://youtu.be/0cK-5Odirgo)
-2. [![Video Two](http://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://youtu.be/0yUIstA3iCI)
-3. [![Video Three](http://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://youtu.be/g-tiUbL8vpw)
+
+<div align="center">
+  
+[![Video_One](https://img.youtube.com/vi/PHk928ncIkg/0.jpg)](https://www.youtube.com/watch?v=0cK-5Odirgo)
+[![Video Two](http://img.youtube.com/vi/BtxTB55BXr4/0.jpg)](https://www.youtube.com/watch?v=0yUIstA3iCI)
+[![Video Three](http://img.youtube.com/vi/iCUb43KZ0d4/0.jpg)](https://www.youtube.com/watch?v=g-tiUbL8vpw)
+
+</div>
 
 ### GIF Demonstrations
 ![GIF One](path_to_gif_one.gif)
 ![GIF Two](path_to_gif_two.gif)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="center">(<a href="#readme-top">Back to Top</a>)</p>
 
 
 <!-- TABLE OF CONTENTS -->
@@ -250,9 +255,9 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
-[MoveNet.js]: https://img.shields.io/badge/MoveNet.js-000000?style=for-the-badge&logo=movenet&logoColor=white
-[MoveNet-url]: https://blog.tensorflow.org/
-[PyTorch.js]: https://img.shields.io/badge/PyTorch.js-000000?style=for-the-badge&logo=pytorch&logoColor=white
+[MoveNet.js]: https://img.shields.io/badge/MoveNet.js-000000?style=for-the-badge&logo=movenet&logoColor=FCB03F
+[MoveNet-url]: https://blog.tensorflow.org/2021/05/next-generation-pose-detection-with-movenet-and-tensorflowjs.html
+[PyTorch.js]: https://img.shields.io/badge/PyTorch.js-000000?style=for-the-badge&logo=pytorch&logoColor=FC543F
 [PyTorch-url]: https://pytorch.org/
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
