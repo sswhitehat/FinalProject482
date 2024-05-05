@@ -95,7 +95,6 @@ Here are some videos and GIFs that demonstrate the project:
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -140,15 +139,15 @@ The process of prep-processing was by far the most time consuming process. Runni
 
 Our KickBoxingLSTM neural network is designed to capture the specific movements in kickboxing using LSTM (Long Short-Term Memory) layers. Here’s a breakdown of the architecture and rationale behind each component:
 
-    Input Layer: This layer receives sequences of keypoints representing positions of various body parts over time from Movenet. The input_size parameter specifies the number of features in each input vector, which should match the number of keypoints multiplied by their dimensions (x, y, z).
+Input Layer: This layer receives sequences of keypoints representing positions of various body parts over time from Movenet. The input_size parameter specifies the number of features in each input vector, which should match the number of keypoints multiplied by their dimensions (x, y, z).
 
-    LSTM Layers: The core of this model is the LSTM layers, which are important for understanding sequences with long-range dependencies(sequences). Each LSTM layer processes the input sequence, maintains hidden states, and passes its outputs to the next layer. This architecture helps in capturing the progression of movements in kickboxing, like the transition from a blocking punches to landing a strike. The num_layers parameter allows for the stacking of multiple LSTM layers to improve the model’s grasp of sequences.
+LSTM Layers: The core of this model is the LSTM layers, which are important for understanding sequences with long-range dependencies(sequences). Each LSTM layer processes the input sequence, maintains hidden states, and passes its outputs to the next layer. This architecture helps in capturing the progression of movements in kickboxing, like the transition from a blocking punches to landing a strike. The num_layers parameter allows for the stacking of multiple LSTM layers to improve the model’s grasp of sequences.
 
-    Dropout Layer: To mitigate the risk of overfitting, a dropout layer follows each LSTM layer, except for the last one. It randomly sets input elements to zero during training at a rate specified by dropout_rate, which helps prevent the model from relying too much on any small set of neurons.
+Dropout Layer: To mitigate the risk of overfitting, a dropout layer follows each LSTM layer, except for the last one. It randomly sets input elements to zero during training at a rate specified by dropout_rate, which helps prevent the model from relying too much on any small set of neurons.
 
-    Fully Connected Layer: After the LSTM layers, a fully connected layer reduces the dimensionality from the hidden state size to the number of output classes (NUM_CLASSES = 8). This layer is crucial for mapping the learned strikes(punches/kicks) to specific class predictions, like different types of strikes.
+Fully Connected Layer: After the LSTM layers, a fully connected layer reduces the dimensionality from the hidden state size to the number of output classes (NUM_CLASSES = 8). This layer is crucial for mapping the learned strikes(punches/kicks) to specific class predictions, like different types of strikes.
 
-    Output: The model outputs the logits for each class, which can be passed through a softmax function to obtain probabilities. However, for training stability and efficiency, we often use the raw logits with a loss function that incorporates softmax internally, like cross-entropy which is implemented in the training.
+Output: The model outputs the logits for each class, which can be passed through a softmax function to obtain probabilities. However, for training stability and efficiency, we often use the raw logits with a loss function that incorporates softmax internally, like cross-entropy which is implemented in the training.
 
 ```py
    class KickBoxingLSTM(nn.Module):
@@ -197,19 +196,19 @@ Our KickBoxingLSTM neural network is designed to capture the specific movements 
 
 ### Training the neural network
 
-Training the neural network was relatively simple after we had pre-processed the training data and built the neural network. All we had to do was to feed the training data into the model and let it work it's magic.
+Training the neural network was relatively simple after we had pre-processed the training data and built the neural network. All we had to do was to feed the training data into the model and let it work it's magic including the steps below.
 
-    Data Loading and Preprocessing: Before training, we load the keypoint data from our Movnet CSV files and parse annotations from corresponding XML files. We also preprocess the data by normalizing the keypoints using a StandardScaler. This normalization is crucial as it ensures that the model is not biased towards features with inherently larger scales such as the category('No Strike').
+Data Loading and Preprocessing: Before training, we load the keypoint data from our Movnet CSV files and parse annotations from corresponding XML files. We also preprocess the data by normalizing the keypoints using a StandardScaler. This normalization is crucial as it ensures that the model is not biased towards features with inherently larger scales such as the category('No Strike').
 
-    Cross-Validation Setup: We employed K-fold cross-validation to ensure that our model generalizes well over different subsets of data. This method splits the dataset into k_folds sets which in our case is 5, using one fold for validation and the rest for training in each iteration. It helps in understanding the model's performance variations across different data splits.
+Cross-Validation Setup: We employed K-fold cross-validation to ensure that our model generalizes well over different subsets of data. This method splits the dataset into k_folds sets which in our case is 5, using one fold for validation and the rest for training in each iteration. It helps in understanding the model's performance variations across different data splits.
 
-    Batch Processing: Data is fed into the model in batches using DataLoader. Implemented to optimize the training process with mini-batch gradient descent.
+Batch Processing: Data is fed into the model in batches using DataLoader. Implemented to optimize the training process with mini-batch gradient descent.
 
-    Optimization and Loss Calculation: We use the Adam optimizer for its adaptive learning rate capabilities, which help in converging faster which is esential for sequence learning. The CrossEntropyLoss function is used for calculating the loss as it's great for multi-class classification problems.
+Optimization and Loss Calculation: We use the Adam optimizer for its adaptive learning rate capabilities, which help in converging faster which is esential for sequence learning. The CrossEntropyLoss function is used for calculating the loss as it's great for multi-class classification problems.
 
-    Model Evaluation and Saving: After each epoch, we evaluate the model on the validation set and save the model's state if it surpasses a predefined accuracy threshold > 90%. This step ensures that we retain the best version of the model throughout the training process.
+Model Evaluation and Saving: After each epoch, we evaluate the model on the validation set and save the model's state if it surpasses a predefined accuracy threshold > 90%. This step ensures that we retain the best version of the model throughout the training process.
 
-    Early Stopping: To avoid overfitting and unnecessary computations, we implemented an early stopping mechanism. If the validation loss does not improve for a specified number of epochs (patience), training is halted.
+Early Stopping: To avoid overfitting and unnecessary computations, we implemented an early stopping mechanism. If the validation loss does not improve for a specified number of epochs (patience), training is halted.
 
 ### Running the neural network on test data
 
