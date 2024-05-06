@@ -33,6 +33,6 @@ def extract_frames(video_path, output_dir):
 
 
 # Example usage
-video_path = 'SuperbonvPetrosyan.mp4'
-output_dir = 'H:/SuperbonvPetrosyan'
+video_path = 'GloryRingTest.mp4'
+output_dir = 'H:/GloryRingTest'
 extract_frames(video_path, output_dir)
