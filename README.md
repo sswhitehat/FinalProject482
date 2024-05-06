@@ -282,15 +282,6 @@ Follow these instructions to get your development environment running:
 
 <p align="right">(<a href="#readme-top">Back to Top</a>)</p>
 
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
 <!-- ROADMAP -->
 ## Roadmap
 
